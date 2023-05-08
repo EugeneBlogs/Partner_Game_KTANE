@@ -1,0 +1,924 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Напарник для игры «Keep Talking and Nobody Explodes»</title>
+</head>
+
+<body class="text-center">
+    <header>
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h2>Вас приветствует <span class="text-success">напарник</span> для игры <span
+                            class="text-danger">"Keep Talking and Nobody Explodes"</span>.</h2>
+                    <p><span class="text-info">Суть игры:</span> один человек выступает в роле сапёра и рассказывает
+                        другому, что видит на бомбе.<br>Другой в свою очередь по <a href="files/Мануал.pdf">мануалу</a>
+                        должен найти нужную инструкцию и
+                        помочь своему напарнику.</p>
+                    <p>Хотите поиграть в данную игру, но у вас нет напарнка? Воспользуйтесь нашим сайтом.<br>Наш
+                        алгоритм имеет инструкции ко всем модулям, которые могут находиться на бомбе.<br>Вы должны
+                        следовать инструкцуям сайта и тогда точно придёте к победе.</p>
+                    <h5><span class="text-warning">Справка:</span><br><span class="text-danger">Версия манула:</span>
+                        2-ru.<br><span class="text-danger">Проверочный код:</span> 317.</h5>
+                    <button class="btn btn-primary" id="start-btn" onclick="StartGame()">Начать игру</button>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section id="information-bomb" style="display: none">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h4 class="text-success">Информация о бомбе:</h4>
+                    <p>Заполните данную информацию, чтобы алгоритм сразу знал все элементы на бомбе.</p>
+                    <input class="form-control" type="text" maxlength="6" id="text_serial-number"
+                        placeholder="Серийный номер бомбы">
+                    <input class="form-control mt-3" type="number" min="0" id="text_batteries"
+                        placeholder="Количество элементов питания">
+                    <img src="img/Батарейки/AA.png" alt="Батарейка AA">
+                    <img src="img/Батарейки/D.png" alt="Батарейка D">
+                    <h5>Отметьте галочкой порты, которые есть на вашей бомбе:</h5>
+                    <table class="table table-bordered text-light">
+                        <thead>
+                            <tr>
+                                <th scope="col">Вид порта</th>
+                                <th scope="col">Название порта</th>
+                                <th scope="col"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th>
+                                    <img src="img/Порты/Параллельный.png" alt="Порт Параллельный">
+                                </th>
+                                <td>Параллельный</td>
+                                <td>
+                                    <input class="form-check-input" type="checkbox" id="p_check_parallel">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    <img src="img/Порты/Последовательный.png" alt="Порт Последовательный">
+                                </th>
+                                <td>Последовательный</td>
+                                <td>
+                                    <input class="form-check-input" type="checkbox" id="p_check_consistent">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    <img src="img/Порты/Двухканальный RCA.png" alt=" ПортДвухканальный RCA">
+                                </th>
+                                <td>Двухканальный RCA</td>
+                                <td>
+                                    <input class="form-check-input" type="checkbox" id="p_check_rca">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    <img src="img/Порты/DVI-D.png" alt="Порт DVI-D">
+                                </th>
+                                <td>DVI-D</td>
+                                <td>
+                                    <input class="form-check-input" type="checkbox" id="p_check_dvi-d">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    <img src="img/Порты/PS-2.png" alt="Порт PS/2">
+                                </th>
+                                <td>PS/2</td>
+                                <td>
+                                    <input class="form-check-input" type="checkbox" id="p_check_ps-2">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    <img src="img/Порты/RJ-45.png" alt="Порт RJ-45">
+                                </th>
+                                <td>RJ-45</td>
+                                <td>
+                                    <input class="form-check-input" type="checkbox" id="p_check_rg-45">
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <h5>Отметьте галочкой индикаторы, которые ГОРЯТ на вашей бомбе:</h5>
+                    <table class="table table-bordered text-light">
+                        <thead>
+                            <tr>
+                                <th scope="col">Текст индикатора</th>
+                                <th scope="col"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>BOB</td>
+                                <td>
+                                    <input class="form-check-input" type="checkbox" id="i_check_bob">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>CAR</td>
+                                <td>
+                                    <input class="form-check-input" type="checkbox" id="i_check_car">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>CLR</td>
+                                <td>
+                                    <input class="form-check-input" type="checkbox" id="i_check_clr">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>FRK</td>
+                                <td>
+                                    <input class="form-check-input" type="checkbox" id="i_check_frk">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>FRQ</td>
+                                <td>
+                                    <input class="form-check-input" type="checkbox" id="i_check_frq">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>IND</td>
+                                <td>
+                                    <input class="form-check-input" type="checkbox" id="i_check_ind">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>MSA</td>
+                                <td>
+                                    <input class="form-check-input" type="checkbox" id="i_check_msa">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>NSA</td>
+                                <td>
+                                    <input class="form-check-input" type="checkbox" id="i_check_nsa">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>SIG</td>
+                                <td>
+                                    <input class="form-check-input" type="checkbox" id="i_check_sig">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>SND</td>
+                                <td>
+                                    <input class="form-check-input" type="checkbox" id="i_check_snd">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>TRN</td>
+                                <td>
+                                    <input class="form-check-input" type="checkbox" id="i_check_trn">
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <button class="btn btn-primary" onclick="SaveInfromation()">Сохранить данные</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="select-module" style="display: none">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h4 class="text-success">Выберите интересующий модуль:</h4>
+                </div>
+                <div class="col-xl-4 col-md-6 col-sm-12">
+                    <a href="#module_1" onclick="Choose(1)">
+                        <img src="img/Модули/Азбука Морзе.png" alt="Модуль Азбука Морзе">
+                        <p>Азбука Морзе</p>
+                    </a>
+                </div>
+                <div class="col-xl-4 col-md-6 col-sm-12">
+                    <a href="#module_2" onclick="Choose(2)">
+                        <img src="img/Модули/Делай как я.png" alt="Модуль Делай как я">
+                        <p>Делай как я</p>
+                    </a>
+                </div>
+                <div class="col-xl-4 col-md-6 col-sm-12">
+                    <a href="#module_3" onclick="Choose(3)">
+                        <img src="img/Модули/Клавиатура.png" alt="Модуль Клавиатура">
+                        <p>Клавиатура</p>
+                    </a>
+                </div>
+                <div class="col-xl-4 col-md-6 col-sm-12">
+                    <a href="#module_4" onclick="Choose(4)">
+                        <img src="img/Модули/Кнопка.png" alt="Модуль Кнопка">
+                        <p>Кнопка</p>
+                    </a>
+                </div>
+                <div class="col-xl-4 col-md-6 col-sm-12">
+                    <a href="#module_5" onclick="Choose(5)">
+                        <img src="img/Модули/Лабиринт.png" alt="Модуль Лабиринт">
+                        <p>Лабиринт</p>
+                    </a>
+                </div>
+                <div class="col-xl-4 col-md-6 col-sm-12">
+                    <a href="#module_6" onclick="Choose(6)">
+                        <img src="img/Модули/Меня зовут Авас, а вас.png" alt="Модуль Меня зовут Авас, а вас">
+                        <p>Меня зовут Авас, а вас?</p>
+                    </a>
+                </div>
+                <div class="col-xl-4 col-md-6 col-sm-12">
+                    <a href="#module_7" onclick="Choose(7)">
+                        <img src="img/Модули/Память.png" alt="Модуль Память">
+                        <p>Память</p>
+                    </a>
+                </div>
+                <div class="col-xl-4 col-md-6 col-sm-12">
+                    <a href="#module_8" onclick="Choose(8)">
+                        <img src="img/Модули/Пароль.png" alt="Модуль Пароль">
+                        <p>Пароль</p>
+                    </a>
+                </div>
+                <div class="col-xl-4 col-md-6 col-sm-12">
+                    <a href="#module_9" onclick="Choose(9)">
+                        <img src="img/Модули/Последовательности проводов.png" alt="Модуль Последовательности проводов">
+                        <p>Последовательности проводов</p>
+                    </a>
+                </div>
+                <div class="col-xl-4 col-md-6 col-sm-12">
+                    <a href="#module_10" onclick="Choose(10)">
+                        <img src="img/Модули/Провода.png" alt="Модуль Провода">
+                        <p>Провода</p>
+                    </a>
+                </div>
+                <div class="col-xl-4 col-md-6 col-sm-12">
+                    <a href="#module_11" onclick="Choose(11)">
+                        <img src="img/Модули/Усложнённые провода.png" alt="Модуль Усложнённые провода">
+                        <p>Усложнённые провода</p>
+                    </a>
+                </div>
+                <div class="col-12">
+                    <h4 class="text-success">Выберите интересующий нестабильный модуль:</h4>
+                </div>
+                <div class="col-xl-4 col-md-6 col-sm-12">
+                    <a href="#module_12" onclick="Choose(12)">
+                        <img src="img/Нестабильные модули/Выпуск газа.png" alt="Нестабильный модуль Выпуск газа">
+                        <p>Выпуск газа</p>
+                    </a>
+                </div>
+                <div class="col-xl-4 col-md-6 col-sm-12">
+                    <a href="#module_13" onclick="Choose(13)">
+                        <img src="img/Нестабильные модули/Поворотные ручки.png"
+                            alt="Нестабильный модуль Поворотные ручки">
+                        <p>Поворотные ручки</p>
+                    </a>
+                </div>
+                <div class="col-xl-4 col-md-6 col-sm-12">
+                    <a href="#module_14" onclick="Choose(14)">
+                        <img src="img/Нестабильные модули/Разрядка конденсатора.png"
+                            alt="Нестабильный модуль Разрядка конденсатора">
+                        <p>Разрядка конденсатора</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="module_1" style="display: none">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h4 class="text-success">Модуль "Азбука Морзе":</h4>
+                    <h6>Попытайтесь написать слово на азбуке Морзе (.-).<br>Каждую букву отделяйте пробелом.</h6>
+                    <input class="form-control" type="text" id="text_Morze" placeholder="Азбука Морзе">
+                    <button class="btn btn-primary" onclick="CheckModule1()">Принять</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="module_2" style="display: none">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h4 class="text-success">Модуль "Делай как я":</h4>
+                    <h6>Сколько вы сделали ошибок?</h6>
+                    <input class="form-check-input" type="radio" name="m2_Mistakes" id="m2_check_mistake-0" checked>
+                    <label class="form-check-label" for="m2_check_mistake-0">0</label>
+                    <input class="form-check-input" type="radio" name="m2_Mistakes" id="m2_check_mistake-1">
+                    <label class="form-check-label" for="m2_check_mistake-1">1</label>
+                    <input class="form-check-input" type="radio" name="m2_Mistakes" id="m2_check_mistake-2">
+                    <label class="form-check-label" for="m2_check_mistake-2">2</label>
+                    <h6>Какой цвет сейчас мигает?</h6>
+                    <input class="form-check-input" type="radio" name="m2_Color" id="m2_check_red" checked>
+                    <label class="form-check-label text-danger" for="m2_check_red-0">Красный</label>
+                    <input class="form-check-input" type="radio" name="m2_Color" id="m2_check_yellow">
+                    <label class="form-check-label text-warning" for="m2_check_yellow-1">Жёлтый</label>
+                    <input class="form-check-input" type="radio" name="m2_Color" id="m2_check_green">
+                    <label class="form-check-label text-success" for="m2_check_green-2">Зелёный</label>
+                    <input class="form-check-input" type="radio" name="m2_Color" id="m2_check_blue">
+                    <label class="form-check-label text-primary" for="m2_check_blue-2">Синий</label>
+                    <br>
+                    <button class="btn btn-primary" onclick="CheckModule2()">Узнать цвет</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="module_3" style="display: none">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h4 class="text-success">Модуль "Клавиатура":</h4>
+                    <h6>Отметьте все символы, которые у вас есть.</h6>
+                    <table class="table table-bordered text-light">
+                        <thead>
+                            <tr>
+                                <th scope="col">Символ</th>
+                                <th scope="col"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th>
+                                    <img src="img/Символы/1.png" alt="Символ">
+                                </th>
+                                <td>
+                                    <input class="form-check-input" type="checkbox" id="m3_check_s1">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    <img src="img/Символы/2.png" alt="Символ">
+                                </th>
+                                <td>
+                                    <input class="form-check-input" type="checkbox" id="m3_check_s2">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    <img src="img/Символы/3.png" alt="Символ">
+                                </th>
+                                <td>
+                                    <input class="form-check-input" type="checkbox" id="m3_check_s3">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    <img src="img/Символы/4.png" alt="Символ">
+                                </th>
+                                <td>
+                                    <input class="form-check-input" type="checkbox" id="m3_check_s4">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    <img src="img/Символы/5.png" alt="Символ">
+                                </th>
+                                <td>
+                                    <input class="form-check-input" type="checkbox" id="m3_check_s5">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    <img src="img/Символы/6.png" alt="Символ">
+                                </th>
+                                <td>
+                                    <input class="form-check-input" type="checkbox" id="m3_check_s6">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    <img src="img/Символы/7.png" alt="Символ">
+                                </th>
+                                <td>
+                                    <input class="form-check-input" type="checkbox" id="m3_check_s7">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    <img src="img/Символы/8.png" alt="Символ">
+                                </th>
+                                <td>
+                                    <input class="form-check-input" type="checkbox" id="m3_check_s8">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    <img src="img/Символы/9.png" alt="Символ">
+                                </th>
+                                <td>
+                                    <input class="form-check-input" type="checkbox" id="m3_check_s9">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    <img src="img/Символы/10.png" alt="Символ">
+                                </th>
+                                <td>
+                                    <input class="form-check-input" type="checkbox" id="m3_check_s10">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    <img src="img/Символы/11.png" alt="Символ">
+                                </th>
+                                <td>
+                                    <input class="form-check-input" type="checkbox" id="m3_check_s11">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    <img src="img/Символы/12.png" alt="Символ">
+                                </th>
+                                <td>
+                                    <input class="form-check-input" type="checkbox" id="m3_check_s12">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    <img src="img/Символы/13.png" alt="Символ">
+                                </th>
+                                <td>
+                                    <input class="form-check-input" type="checkbox" id="m3_check_s13">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    <img src="img/Символы/14.png" alt="Символ">
+                                </th>
+                                <td>
+                                    <input class="form-check-input" type="checkbox" id="m3_check_s14">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    <img src="img/Символы/15.png" alt="Символ">
+                                </th>
+                                <td>
+                                    <input class="form-check-input" type="checkbox" id="m3_check_s15">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    <img src="img/Символы/16.png" alt="Символ">
+                                </th>
+                                <td>
+                                    <input class="form-check-input" type="checkbox" id="m3_check_s16">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    <img src="img/Символы/17.png" alt="Символ">
+                                </th>
+                                <td>
+                                    <input class="form-check-input" type="checkbox" id="m3_check_s17">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    <img src="img/Символы/18.png" alt="Символ">
+                                </th>
+                                <td>
+                                    <input class="form-check-input" type="checkbox" id="m3_check_s18">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    <img src="img/Символы/19.png" alt="Символ">
+                                </th>
+                                <td>
+                                    <input class="form-check-input" type="checkbox" id="m3_check_s19">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    <img src="img/Символы/20.png" alt="Символ">
+                                </th>
+                                <td>
+                                    <input class="form-check-input" type="checkbox" id="m3_check_s20">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    <img src="img/Символы/21.png" alt="Символ">
+                                </th>
+                                <td>
+                                    <input class="form-check-input" type="checkbox" id="m3_check_s21">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    <img src="img/Символы/22.png" alt="Символ">
+                                </th>
+                                <td>
+                                    <input class="form-check-input" type="checkbox" id="m3_check_s22">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    <img src="img/Символы/23.png" alt="Символ">
+                                </th>
+                                <td>
+                                    <input class="form-check-input" type="checkbox" id="m3_check_s23">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    <img src="img/Символы/24.png" alt="Символ">
+                                </th>
+                                <td>
+                                    <input class="form-check-input" type="checkbox" id="m3_check_s24">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    <img src="img/Символы/25.png" alt="Символ">
+                                </th>
+                                <td>
+                                    <input class="form-check-input" type="checkbox" id="m3_check_s25">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    <img src="img/Символы/26.png" alt="Символ">
+                                </th>
+                                <td>
+                                    <input class="form-check-input" type="checkbox" id="m3_check_s26">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    <img src="img/Символы/27.png" alt="Символ">
+                                </th>
+                                <td>
+                                    <input class="form-check-input" type="checkbox" id="m3_check_s27">
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <button class="btn btn-primary" onclick="CheckModule3()">Узнать порядок</button>
+                    <br>
+                    <img id="result_s1" src="" alt="Символ 1">
+                    <img id="result_s2" src="" alt="Символ 2">
+                    <img id="result_s3" src="" alt="Символ 3">
+                    <img id="result_s4" src="" alt="Символ 4">
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="module_4" style="display: none">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h4 class="text-success">Модуль "Кнопка":</h4>
+                    <h6>Какой цвет у кнопки?</h6>
+                    <input class="form-check-input" type="radio" name="m4_ColorButton" id="m4_check_white" checked>
+                    <label class="form-check-label" for="m4_check_white">Белая</label>
+                    <input class="form-check-input" type="radio" name="m4_ColorButton" id="m4_check_yellow">
+                    <label class="form-check-label text-warning" for="m4_check_yellow">Жёлтая</label>
+                    <input class="form-check-input" type="radio" name="m4_ColorButton" id="m4_check_red">
+                    <label class="form-check-label text-danger" for="m4_check_red">Красная</label>
+                    <input class="form-check-input" type="radio" name="m4_ColorButton" id="m4_check_blue">
+                    <label class="form-check-label text-primary" for="m4_check_blue">Синяя</label>
+                    <h6>Что на ней написано?</h6>
+                    <input class="form-check-input" type="radio" name="m4_TextButton" id="m4_check_1" checked>
+                    <label class="form-check-label text-" for="m4_check_1">Взорвать</label>
+                    <input class="form-check-input" type="radio" name="m4_TextButton" id="m4_check_2">
+                    <label class="form-check-label text-" for="m4_check_2">Держать</label>
+                    <input class="form-check-input" type="radio" name="m4_TextButton" id="m4_check_3">
+                    <label class="form-check-label text-" for="m4_check_3">Нажать</label>
+                    <input class="form-check-input" type="radio" name="m4_TextButton" id="m4_check_4">
+                    <label class="form-check-label text-" for="m4_check_4">Прервать</label>
+                    <br>
+                    <button class="btn btn-primary" onclick="CheckModule4()">Принять</button>
+                    <h6 class="mt-5">Пункт "Удержание кнопки"</h6>
+                    <p><span class="text-light">Белая полоска</span> - отпускайте, когда любая цифра обратного таймера
+                        будет равна <span class="text-danger">1</span></p>
+                    <p><span class="text-warning">Жёлтая полоска</span> - отпускайте, когда любая цифра обратного
+                        таймера будет равна <span class="text-danger">5</span></p>
+                    <p><span class="text-primary">Синяя полоска</span> - отпускайте, когда любая цифра обратного таймера
+                        будет равна <span class="text-danger">4</span></p>
+                    <p><span class="text-dark">Другой цвет</span> - отпускайте, когда любая цифра обратного таймера
+                        будет равна <span class="text-danger">1</span></p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="module_5" style="display: none">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h4 class="text-success">Модуль "Лабиринт":</h4>
+                    <h6>Введите координаты зелёных точек.</h6>
+                    <p class="text-warning">Точка 1 (левее): </p>
+                    <input class="form-control" id="m5_point1_x" type="number" min="1" max="6" placeholder="Столбец">
+                    <input class="form-control" id="m5_point1_y" type="number" min="1" max="6" placeholder="Строка">
+                    <p class="mt-3 text-warning">Точка 2 (правее): </p>
+                    <input class="form-control" id="m5_point2_x" type="number" min="1" max="6" placeholder="Столбец">
+                    <input class="form-control" id="m5_point2_y" type="number" min="1" max="6" placeholder="Строка">
+                    <button class="btn btn-primary" onclick="CheckModule5()">Показать нужный лабиринт</button>
+                    <br>
+                    <img style="display: none" id="maze_1" src="img/Лабиринты/1.png" alt="Лабиринт 1">
+                    <img style="display: none" id="maze_2" src="img/Лабиринты/2.png" alt="Лабиринт 2">
+                    <img style="display: none" id="maze_3" src="img/Лабиринты/3.png" alt="Лабиринт 3">
+                    <img style="display: none" id="maze_4" src="img/Лабиринты/4.png" alt="Лабиринт 4">
+                    <img style="display: none" id="maze_5" src="img/Лабиринты/5.png" alt="Лабиринт 5">
+                    <img style="display: none" id="maze_6" src="img/Лабиринты/6.png" alt="Лабиринт 6">
+                    <img style="display: none" id="maze_7" src="img/Лабиринты/7.png" alt="Лабиринт 7">
+                    <img style="display: none" id="maze_8" src="img/Лабиринты/8.png" alt="Лабиринт 8">
+                    <img style="display: none" id="maze_9" src="img/Лабиринты/9.png" alt="Лабиринт 9">
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="module_6" style="display: none">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h4 class="text-success">Модуль "Меня зовут Авас, а вас?":</h4>
+                    <h5 class="text-danger">Внимание! Соблюдайте правописание пробелом, а также буквы 'Е' и 'Ё'.</h5>
+                    <h6>Какое слово у вас сейчас написано?</h6>
+                    <input class="form-control" type="text" id="m6_text1" placeholder="Слово">
+                    <button class="btn btn-primary" onclick="CheckModule6Text1()">Принять</button>
+                    <div class="mt-3" id="stage2">
+                        <h6>Какое слово у вас на позиции: <span id="m6_position"></span>?</h6>
+                        <input class="form-control" type="text" id="m6_text2" placeholder="Слово">
+                        <button class="btn btn-primary" onclick="CheckModule6Text2()">Принять</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="module_7" style="display: none">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h4 class="text-success">Модуль "Память":</h4>
+                    <h6>Впишите номер этапа и цифру на экране.</h6>
+                    <input class="form-control" type="number" id="m7_stage" placeholder="Этап">
+                    <input class="form-control" type="number" id="m7_value" placeholder="Значение на экране">
+                    <button class="btn btn-primary" onclick="CheckModule7()">Узнать цифру</button>
+                    <h6 class="text-danger">Внимание! Не забывайте записывать значения в таблицу ниже, иначе забудете,
+                        куда нажимать!</h6>
+                    <table class="table table-bordered text-light">
+                        <thead>
+                            <tr>
+                                <th scope="col">Позиция</th>
+                                <th scope="col">Значение</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><input class="form-control" type="number" placeholder="Позиция этапа 1"></td>
+                                <td><input class="form-control" type="number" placeholder="Значение этапа 1"></td>
+                            </tr>
+                            <tr>
+                                <td><input class="form-control" type="number" placeholder="Позиция этапа 2"></td>
+                                <td><input class="form-control" type="number" placeholder="Значение этапа 2"></td>
+                            </tr>
+                            <tr>
+                                <td><input class="form-control" type="number" placeholder="Позиция этапа 3"></td>
+                                <td><input class="form-control" type="number" placeholder="Значение этапа 3"></td>
+                            </tr>
+                            <tr>
+                                <td><input class="form-control" type="number" placeholder="Позиция этапа 4"></td>
+                                <td><input class="form-control" type="number" placeholder="Значение этапа 4"></td>
+                            </tr>
+                            <tr>
+                                <td><input class="form-control" type="number" placeholder="Позиция этапа 5"></td>
+                                <td><input class="form-control" type="number" placeholder="Значение этапа 5"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="module_8" style="display: none">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h4 class="text-success">Модуль "Пароль":</h4>
+                    <h6>Вводите первые буквы, пока не подберёте пароль.</h6>
+                    <input class="form-control" type="text" id="m8_first" maxlength="1" placeholder="Первая буква">
+                    <button class="btn btn-primary" onclick="CheckModule8()">Узнать слова</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="module_9" style="display: none">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h4 class="text-success">Модуль "Последовательности проводов":</h4>
+                    <h6>Выберите цвет провода.</h6>
+                    <input class="form-check-input" type="radio" name="m9_Color" id="m9_check_red" checked>
+                    <label class="form-check-label text-danger" for="m9_check_red">Красный</label>
+                    <input class="form-check-input" type="radio" name="m9_Color" id="m9_check_blue">
+                    <label class="form-check-label text-primary" for="m9_check_blue">Синий</label>
+                    <input class="form-check-input" type="radio" name="m9_Color" id="m9_check_black">
+                    <label class="form-check-label text-dark" for="m9_check_black">Чёрный</label>
+                    <h6>Выберите позицию провода, т.е. какой это провод по счёту с самого начала (конкретно этого
+                        цвета).</h6>
+                    <input class="form-control" type="number" id="m9_count" min="1" max="9" placeholder="Позиция">
+                    <h6>Выберите букву слота, в которых подключён этот провод.</h6>
+                    <input class="form-check-input" type="radio" name="m9_Letter" id="m9_check_A" checked>
+                    <label class="form-check-label" for="m9_check_A">А</label>
+                    <input class="form-check-input" type="radio" name="m9_Letter" id="m9_check_B">
+                    <label class="form-check-label" for="m9_check_B">Б</label>
+                    <input class="form-check-input" type="radio" name="m9_Letter" id="m9_check_V">
+                    <label class="form-check-label" for="m9_check_V">В</label>
+                    <br>
+                    <button class="btn btn-primary" onclick="CheckModule9()">Резать или нет?</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="module_10" style="display: none">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h4 class="text-success">Модуль "Провода":</h4>
+                    <h6>Выберите цвет для каждого провода.</h6>
+                    1.
+                    <input class="form-check-input" type="radio" name="m10_Wire1" id="m10_check_w1_white" checked>
+                    <label class="form-check-label" for="m10_check_w1_white">Белый</label>
+                    <input class="form-check-input" type="radio" name="m10_Wire1" id="m10_check_w1_yellow">
+                    <label class="form-check-label text-warning" for="m10_check_w1_yellow">Жёлтый</label>
+                    <input class="form-check-input" type="radio" name="m10_Wire1" id="m10_check_w1_red">
+                    <label class="form-check-label text-danger" for="m10_check_w1_red">Красный</label>
+                    <input class="form-check-input" type="radio" name="m10_Wire1" id="m10_check_w1_blue">
+                    <label class="form-check-label text-primary" for="m10_check_w1_blue">Синий</label>
+                    <input class="form-check-input" type="radio" name="m10_Wire1" id="m10_check_w1_black">
+                    <label class="form-check-label text-dark" for="m10_check_w1_black">Чёрный</label>
+                    <br>
+                    2.
+                    <input class="form-check-input" type="radio" name="m10_Wire2" id="m10_check_w2_white" checked>
+                    <label class="form-check-label" for="m10_check_w2_white">Белый</label>
+                    <input class="form-check-input" type="radio" name="m10_Wire2" id="m10_check_w2_yellow">
+                    <label class="form-check-label text-warning" for="m10_check_w2_yellow">Жёлтый</label>
+                    <input class="form-check-input" type="radio" name="m10_Wire2" id="m10_check_w2_red">
+                    <label class="form-check-label text-danger" for="m10_check_w2_red">Красный</label>
+                    <input class="form-check-input" type="radio" name="m10_Wire2" id="m10_check_w2_blue">
+                    <label class="form-check-label text-primary" for="m10_check_w2_blue">Синий</label>
+                    <input class="form-check-input" type="radio" name="m10_Wire2" id="m10_check_w2_black">
+                    <label class="form-check-label text-dark" for="m10_check_w2_black">Чёрный</label>
+                    <br>
+                    3.
+                    <input class="form-check-input" type="radio" name="m10_Wire3" id="m10_check_w3_white" checked>
+                    <label class="form-check-label" for="m10_check_w3_white">Белый</label>
+                    <input class="form-check-input" type="radio" name="m10_Wire3" id="m10_check_w3_yellow">
+                    <label class="form-check-label text-warning" for="m10_check_w3_yellow">Жёлтый</label>
+                    <input class="form-check-input" type="radio" name="m10_Wire3" id="m10_check_w3_red">
+                    <label class="form-check-label text-danger" for="m10_check_w3_red">Красный</label>
+                    <input class="form-check-input" type="radio" name="m10_Wire3" id="m10_check_w3_blue">
+                    <label class="form-check-label text-primary" for="m10_check_w3_blue">Синий</label>
+                    <input class="form-check-input" type="radio" name="m10_Wire3" id="m10_check_w3_black">
+                    <label class="form-check-label text-dark" for="m10_check_w3_black">Чёрный</label>
+                    <br>
+                    4.
+                    <input class="form-check-input" type="radio" name="m10_Wire4" id="m10_check_w4_white" checked>
+                    <label class="form-check-label" for="m10_check_w4_white">Белый</label>
+                    <input class="form-check-input" type="radio" name="m10_Wire4" id="m10_check_w4_yellow">
+                    <label class="form-check-label text-warning" for="m10_check_w4_yellow">Жёлтый</label>
+                    <input class="form-check-input" type="radio" name="m10_Wire4" id="m10_check_w4_red">
+                    <label class="form-check-label text-danger" for="m10_check_w4_red">Красный</label>
+                    <input class="form-check-input" type="radio" name="m10_Wire4" id="m10_check_w4_blue">
+                    <label class="form-check-label text-primary" for="m10_check_w4_blue">Синий</label>
+                    <input class="form-check-input" type="radio" name="m10_Wire4" id="m10_check_w4_black">
+                    <label class="form-check-label text-dark" for="m10_check_w4_black">Чёрный</label>
+                    <input class="form-check-input" type="radio" name="m10_Wire4" id="m10_check_w4_no">
+                    <label class="form-check-label text-info" for="m10_check_w4_no">Провод отсутствует</label>
+                    <br>
+                    5.
+                    <input class="form-check-input" type="radio" name="m10_Wire5" id="m10_check_w5_white" checked>
+                    <label class="form-check-label" for="m10_check_w1_white">Белый</label>
+                    <input class="form-check-input" type="radio" name="m10_Wire5" id="m10_check_w5_yellow">
+                    <label class="form-check-label text-warning" for="m10_check_w5_yellow">Жёлтый</label>
+                    <input class="form-check-input" type="radio" name="m10_Wire5" id="m10_check_w5_red">
+                    <label class="form-check-label text-danger" for="m10_check_w5_red">Красный</label>
+                    <input class="form-check-input" type="radio" name="m10_Wire5" id="m10_check_w5_blue">
+                    <label class="form-check-label text-primary" for="m10_check_w5_blue">Синий</label>
+                    <input class="form-check-input" type="radio" name="m10_Wire5" id="m10_check_51_black">
+                    <label class="form-check-label text-dark" for="m10_check_w5_black">Чёрный</label>
+                    <input class="form-check-input" type="radio" name="m10_Wire5" id="m10_check_w5_no">
+                    <label class="form-check-label text-info" for="m10_check_w5_no">Провод отсутствует</label>
+                    <br>
+                    6.
+                    <input class="form-check-input" type="radio" name="m10_Wire6" id="m10_check_w6_white" checked>
+                    <label class="form-check-label" for="m10_check_w1_white">Белый</label>
+                    <input class="form-check-input" type="radio" name="m10_Wire6" id="m10_check_w6_yellow">
+                    <label class="form-check-label text-warning" for="m10_check_w6_yellow">Жёлтый</label>
+                    <input class="form-check-input" type="radio" name="m10_Wire6" id="m10_check_w6_red">
+                    <label class="form-check-label text-danger" for="m10_check_w6_red">Красный</label>
+                    <input class="form-check-input" type="radio" name="m10_Wire6" id="m10_check_w6_blue">
+                    <label class="form-check-label text-primary" for="m10_check_w6_blue">Синий</label>
+                    <input class="form-check-input" type="radio" name="m10_Wire6" id="m10_check_w6_black">
+                    <label class="form-check-label text-dark" for="m10_check_w6_black">Чёрный</label>
+                    <input class="form-check-input" type="radio" name="m10_Wire6" id="m10_check_w6_no">
+                    <label class="form-check-label text-info" for="m10_check_w6_no">Провод отсутствует</label>
+                    <br>
+                    <button class="btn btn-primary" onclick="CheckModule10()">Какой резать?</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="module_11" style="display: none">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h4 class="text-success">Модуль "Усложнённые провода":</h4>
+                    <h6>Выберите всю верную информацию для провода.</h6>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="m11_check_1">
+                        <label class="form-check-label" for="m11_check_1">У провода есть <span
+                                class="text-danger">красный</span> цвет</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="m11_check_2">
+                        <label class="form-check-label" for="m11_check_2">У провода есть <span
+                                class="text-primary">синий</span> цвет</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="m11_check_3">
+                        <label class="form-check-label" for="m11_check_3">У провода есть белый цвет</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="m11_check_4">
+                        <label class="form-check-label" for="m11_check_4">Нарисована <span class="text-warning">★</span>
+                            под проводом</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="m11_check_5">
+                        <label class="form-check-label" for="m11_check_5">Горит <span
+                                class="text-warning">светодиод</span> над проводом</label>
+                    </div>
+                    <button class="btn btn-primary" onclick="CheckModule11()">Резать или нет?</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="module_12" style="display: none">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h4 class="text-success">Нестабильный модуль "Выпуск газа":</h4>
+                    <h6>Отвечайте на запросы компьютера кнопкой "Д", если "да", или "Н", если "нет".</h6>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="module_13" style="display: none">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h4 class="text-success">Нестабильный модуль "Поворотные ручки":</h4>
+                    <h6>Какие светодиоды у вас светятся? Отметьте галочкой.</h6>
+                    <input class="form-check-input" type="checkbox" id="m13_check_1">
+                    <input class="form-check-input" type="checkbox" id="m13_check_2">
+                    <input class="form-check-input" type="checkbox" id="m13_check_3">
+                    <input class="form-check-input" type="checkbox" id="m13_check_4">
+                    <input class="form-check-input" type="checkbox" id="m13_check_5">
+                    <input class="form-check-input" type="checkbox" id="m13_check_6">
+                    <br>
+                    <input class="form-check-input" type="checkbox" id="m13_check_7">
+                    <input class="form-check-input" type="checkbox" id="m13_check_8">
+                    <input class="form-check-input" type="checkbox" id="m13_check_9">
+                    <input class="form-check-input" type="checkbox" id="m13_check_10">
+                    <input class="form-check-input" type="checkbox" id="m13_check_11">
+                    <input class="form-check-input" type="checkbox" id="m13_check_12">
+                    <br>
+                    <button class="btn btn-primary" onclick="CheckModule13()">Узнать позицию ручки</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="module_14" style="display: none">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h4 class="text-success">Нестабильный модуль "Разрядка конденсатора":</h4>
+                    <h6>Разрядите конденсатор, зажимая рычаг, прежде чем он перегрузится.</h6>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h6 class="text-warning">Игра создана компанией "Steel Crate Games".</h6>
+                    <h6 class="text-warning">Сайт разработан компанией "MylnikCode".</h6>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
