@@ -172,7 +172,7 @@ function CheckModule1() {
                 alert("Введите: 3.532 МГц.")
                 return 0
             } else {
-                alert("Некорректные данные.")
+                alert("Недостаточно данных или неверно заполненные данные.")
                 return 0
             }
         } else if (letters_rus[0] == "В") {
@@ -187,14 +187,14 @@ function CheckModule1() {
                     alert("Введите: 3.545 МГц.")
                     return 0
                 } else {
-                    alert("Некорректные данные.")
+                    alert("Недостаточно данных или неверно заполненные данные.")
                     return 0
                 }
             } else if (letters_rus[1] == "О") {
                 alert("Введите: 3.552 МГц.")
                 return 0
             } else {
-                alert("Некорректные данные.")
+                alert("Недостаточно данных или неверно заполненные данные.")
                 return 0
             }
         } else if (letters_rus[0] == "К") {
@@ -205,7 +205,7 @@ function CheckModule1() {
                 alert("Введите: 3.572 МГц.")
                 return 0
             } else {
-                alert("Некорректные данные.")
+                alert("Недостаточно данных или неверно заполненные данные.")
                 return 0
             }
         } else if (letters_rus[0] == "М") {
@@ -231,19 +231,19 @@ function CheckModule1() {
                             alert("Введите: 3.600 МГц.")
                             return 0
                         } else {
-                            alert("Некорректные данные.")
+                            alert("Недостаточно данных или неверно заполненные данные.")
                             return 0
                         }
                     } else {
-                        alert("Некорректные данные.")
+                        alert("Недостаточно данных или неверно заполненные данные.")
                         return 0
                     }
                 } else {
-                    alert("Некорректные данные.")
+                    alert("Недостаточно данных или неверно заполненные данные.")
                     return 0
                 }
             } else {
-                alert("Некорректные данные.")
+                alert("Недостаточно данных или неверно заполненные данные.")
                 return 0
             }
         } else if (letters_rus[0] == "Р") {
@@ -253,7 +253,7 @@ function CheckModule1() {
             alert("Введите: 3.505 МГц.")
             return 0
         } else {
-            alert("Некорректные данные.")
+            alert("Недостаточно данных или неверно заполненные данные")
             return 0
         }
     }
@@ -519,7 +519,7 @@ function CheckModule3() {
                 }
             }
         } else {
-            alert("Некорректные данные.")
+            alert("Группа в данными символами не найдена.")
         }
         for (let i = 0; i < order.length; i++) {
             if (i == 0) {
@@ -588,7 +588,7 @@ function CheckModule5() {
     } else if (p1x == 1 && p1y == 5 && p2x == 3 && p2y == 2) {
         document.getElementById("maze_9").style.display = "block"
     } else {
-        alert("Некорректные данные.")
+        alert("Лабиринт с такими точками не найден.")
     }
 }
 
@@ -651,7 +651,7 @@ function CheckModule6Text1() {
     } else if (w1 == "ПОГОДИ") {
         document.getElementById("m6_position").innerHTML = "Столбец 2. Строка 3."
     } else {
-        alert("Некорректные данные.")
+        alert("Данного слова нет в списке.")
     }
 }
 function CheckModule6Text2() {
@@ -713,7 +713,7 @@ function CheckModule6Text2() {
     } else if (w2 == "ЧТО?") {
         alert("Нажмите на первую кнопку, которая появиться в данной списке:\n\n ВСЁ, ДАЛЬШЕ, ИТАК, И ТАК, ЧЁ?, ЖМИ, ПАСС, ПАЗ, ПАС, ВО ВСЕ, ЧТО?, ЧЕ?, ВОВСЕ, ВСЕ")
     } else {
-        alert("Некорректные данные.")
+        alert("Данного слова нет в списке.")
     }
 }
 
@@ -728,7 +728,7 @@ function CheckModule7() {
         } else if (document.getElementById("m7_value").value == 4) {
             alert("Нажмите на кнопку на позиции 4.")
         } else {
-            alert("Некорректные данные.")
+            alert("Неверно заполненные данные.")
         }
     } else if (document.getElementById("m7_stage").value == 2) {
         if (document.getElementById("m7_value").value == 1) {
@@ -740,7 +740,7 @@ function CheckModule7() {
         } else if (document.getElementById("m7_value").value == 4) {
             alert("Нажмите на кнопку на той же позиции, что и на этапе 1.")
         } else {
-            alert("Некорректные данные.")
+            alert("Неверно заполненные данные.")
         }
     } else if (document.getElementById("m7_stage").value == 3) {
         if (document.getElementById("m7_value").value == 1) {
@@ -752,7 +752,7 @@ function CheckModule7() {
         } else if (document.getElementById("m7_value").value == 4) {
             alert("Нажмите на кнопку со значением - 4.")
         } else {
-            alert("Некорректные данные.")
+            alert("Неверно заполненные данные.")
         }
     } else if (document.getElementById("m7_stage").value == 4) {
         if (document.getElementById("m7_value").value == 1) {
@@ -764,7 +764,7 @@ function CheckModule7() {
         } else if (document.getElementById("m7_value").value == 4) {
             alert("Нажмите на кнопку на той же позиции, что и на этапе 2.")
         } else {
-            alert("Некорректные данные.")
+            alert("Неверно заполненные данные.")
         }
     } else if (document.getElementById("m7_stage").value == 5) {
         if (document.getElementById("m7_value").value == 1) {
@@ -776,10 +776,10 @@ function CheckModule7() {
         } else if (document.getElementById("m7_value").value == 4) {
             alert("Нажмите на кнопку с тем же значением, что и на этапе 3.")
         } else {
-            alert("Некорректные данные.")
+            alert("Неверно заполненные данные.")
         }
     } else {
-        alert("Некорректные данные.")
+        alert("Неверно заполненные данные.")
     }
 }
 
@@ -817,7 +817,7 @@ function CheckModule8() {
     } else if (document.getElementById("m8_first").value.toUpperCase() == "Щ") {
         alert("Попробуйте слова:\n\nЩИПОК, ЩИПЦЫ")
     } else {
-        alert("Некорректные данные.")
+        alert("На данную букву слов нет.")
     }
 }
 
@@ -874,7 +874,7 @@ function CheckModule9() {
                 alert("НЕ РЕЗАТЬ!")
             }
         } else {
-            alert("Некорректные данные.")
+            alert("Неверно заполненные данные.")
         }
     } else if (document.getElementById("m9_check_blue").checked) {
         if (Number(document.getElementById("m9_count").value) == 1) {
@@ -932,7 +932,7 @@ function CheckModule9() {
                 alert("НЕ РЕЗАТЬ!")
             }
         } else {
-            alert("Некорректные данные.")
+            alert("Неверно заполненные данные.")
         }
     } else if (document.getElementById("m9_check_black").checked) {
         if (Number(document.getElementById("m9_count").value) == 1) {
@@ -986,7 +986,7 @@ function CheckModule9() {
                 alert("НЕ РЕЗАТЬ!")
             }
         } else {
-            alert("Некорректные данные.")
+            alert("Неверно заполненные данные.")
         }
     }
 }
@@ -996,14 +996,14 @@ function CheckModule10() {
     if (document.getElementById("m10_check_w4_no").checked) {
         count = 3
         if (!document.getElementById("m10_check_w5_no").checked || !document.getElementById("m10_check_w6_no").checked) {
-            alert("Некорректные данные.")
+            alert("Невозможный случай.")
             return 0
         }
     }
     else if (document.getElementById("m10_check_w5_no").checked) {
         count = 4
         if (!document.getElementById("m10_check_w6_no").checked) {
-            alert("Некорректные данные.")
+            alert("Невозможный случай.")
             return 0
         }
     }
@@ -1260,7 +1260,7 @@ function CheckModule11() {
             }
         }
     } else {
-        alert("Некорректные данные.")
+        alert("Неверно заполненные данные.")
     }
 }
 
@@ -1282,6 +1282,6 @@ function CheckModule13() {
     } else if (document.getElementById("m13_check_1").checked && !document.getElementById("m13_check_2").checked && document.getElementById("m13_check_3").checked && document.getElementById("m13_check_4").checked && !document.getElementById("m13_check_5").checked && !document.getElementById("m13_check_6").checked && document.getElementById("m13_check_7").checked && document.getElementById("m13_check_8").checked && document.getElementById("m13_check_9").checked && !document.getElementById("m13_check_10").checked && document.getElementById("m13_check_11").checked && !document.getElementById("m13_check_12").checked) {
         alert("Позиция ручки: ВПРАВО →.")
     } else {
-        alert("Некорректные данные.")
+        alert("Неверно заполненные данные.")
     }
 }
