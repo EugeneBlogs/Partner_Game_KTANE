@@ -1237,17 +1237,17 @@ function CheckModule11() {
             alert("РЕЗАТЬ!")
         }
     }
-    else if (blue) {
+   else if (blue) {
         if (star && light) {
-            alert("НЕ РЕЗАТЬ!")
-        } else if (star) {
             if (p_parallel) {
                 alert("РЕЗАТЬ!")
             } else {
                 alert("НЕ РЕЗАТЬ!")
             }
+        } else if (star) {
+            alert("НЕ РЕЗАТЬ!")
         } else if (light) {
-            if (Number(getLatestDigit(serial_number)) == 0 || Number(getLatestDigit(serial_number)) == 2 || Number(getLatestDigit(serial_number)) == 4 || Number(getLatestDigit(serial_number)) == 6 || Number(getLatestDigit(serial_number)) == 8) {
+            if (p_parallel) {
                 alert("РЕЗАТЬ!")
             } else {
                 alert("НЕ РЕЗАТЬ!")
