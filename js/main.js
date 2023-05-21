@@ -52,6 +52,39 @@ function SaveInfromation() {
             if (document.getElementById("i_check_trn").checked) i_trn = true
             document.getElementById("information-bomb").style.display = "none"
             document.getElementById("select-module").style.display = "block"
+            document.getElementById("itog_sn").innerHTML = serial_number
+            document.getElementById("itog_kolvo").innerHTML = batteries
+            let str_ports = ""
+            if (p_parallel) str_ports += "параллельный, "
+            if (p_consistent) str_ports += "последовательный, "
+            if (p_rca) str_ports += "двухканальный RCA, "
+            if (p_dvid) str_ports += "DVI-D, "
+            if (p_ps2) str_ports += "PS/2, "
+            if (p_rg45) str_ports += "RJ-45, "
+            if (str_ports == "") {
+                str_ports = "отсутствуют"
+            } else {
+                str_ports = str_ports.substring(0, str_ports.length - 2);
+            }
+            document.getElementById("itog_ports").innerHTML = str_ports
+            let str_inds = ""
+            if (i_bob) str_inds += "BOB, "
+            if (i_car) str_inds += "CAR, "
+            if (i_clr) str_inds += "CLR, "
+            if (i_frk) str_inds += "FRK, "
+            if (i_frq) str_inds += "FRQ, "
+            if (i_ind) str_inds += "IND, "
+            if (i_msa) str_inds += "MSA, "
+            if (i_nsa) str_inds += "NSA, "
+            if (i_sig) str_inds += "SIG, "
+            if (i_snd) str_inds += "SND, "
+            if (i_trn) str_inds += "TRN, "
+            if (str_inds == "") {
+                str_inds = "отсутствуют"
+            } else {
+                str_inds = str_inds.substring(0, str_inds.length - 2);
+            }
+            document.getElementById("itog_inds").innerHTML = str_inds
         }
     }
 }
