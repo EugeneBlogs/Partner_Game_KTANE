@@ -54,7 +54,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                           <tr>
+                            <tr>
                                 <th>
                                     <img style="width: 15%" src="img/Порты/Параллельный.png" alt="Порт Параллельный">
                                 </th>
@@ -318,21 +318,20 @@
                 <div class="col-12">
                     <h4 class="text-success">Модуль "Делай как я":</h4>
                     <h6>Сколько вы сделали ошибок?</h6>
-                    <input class="form-check-input" type="radio" name="m2_Mistakes" id="m2_check_mistake-0" checked>
-                    <label class="form-check-label" for="m2_check_mistake-0">0</label>
-                    <input class="form-check-input" type="radio" name="m2_Mistakes" id="m2_check_mistake-1">
-                    <label class="form-check-label" for="m2_check_mistake-1">1</label>
-                    <input class="form-check-input" type="radio" name="m2_Mistakes" id="m2_check_mistake-2">
-                    <label class="form-check-label" for="m2_check_mistake-2">2</label>
+                    <select class="form-select" id="m2_mistake" name="m2_mistake">
+                        <option disabled selected>Выберите количество</option>
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                    </select>
                     <h6>Какой цвет сейчас мигает?</h6>
-                    <input class="form-check-input" type="radio" name="m2_Color" id="m2_check_red" checked>
-                    <label class="form-check-label text-danger" for="m2_check_red-0">Красный</label>
-                    <input class="form-check-input" type="radio" name="m2_Color" id="m2_check_yellow">
-                    <label class="form-check-label text-warning" for="m2_check_yellow-1">Жёлтый</label>
-                    <input class="form-check-input" type="radio" name="m2_Color" id="m2_check_green">
-                    <label class="form-check-label text-success" for="m2_check_green-2">Зелёный</label>
-                    <input class="form-check-input" type="radio" name="m2_Color" id="m2_check_blue">
-                    <label class="form-check-label text-primary" for="m2_check_blue-2">Синий</label>
+                    <select class="form-select" id="m2_color" name="m2_color">
+                        <option disabled selected>Выберите цвет</option>
+                        <option style="color: red;" value="red">Красный</option>
+                        <option style="color: yellow;" value="yellow">Жёлтый</option>
+                        <option style="color: green;" value="green">Зелёный</option>
+                        <option style="color: blue;" value="blue">Синий</option>
+                    </select>
                     <br>
                     <button class="btn btn-primary" onclick="CheckModule2()">Узнать цвет</button>
                 </div>
@@ -587,23 +586,21 @@
                 <div class="col-12">
                     <h4 class="text-success">Модуль "Кнопка":</h4>
                     <h6>Какой цвет у кнопки?</h6>
-                    <input class="form-check-input" type="radio" name="m4_ColorButton" id="m4_check_white" checked>
-                    <label class="form-check-label" for="m4_check_white">Белая</label>
-                    <input class="form-check-input" type="radio" name="m4_ColorButton" id="m4_check_yellow">
-                    <label class="form-check-label text-warning" for="m4_check_yellow">Жёлтая</label>
-                    <input class="form-check-input" type="radio" name="m4_ColorButton" id="m4_check_red">
-                    <label class="form-check-label text-danger" for="m4_check_red">Красная</label>
-                    <input class="form-check-input" type="radio" name="m4_ColorButton" id="m4_check_blue">
-                    <label class="form-check-label text-primary" for="m4_check_blue">Синяя</label>
+                    <select class="form-select" id="m4_color" name="m4_color">
+                        <option disabled selected>Выберите цвет</option>
+                        <option style="background-color: black; color: white;" value="white">Белая</option>
+                        <option style="color: yellow;" value="yellow">Жёлтая</option>
+                        <option style="color: red;" value="red">Красная</option>
+                        <option style="color: blue;" value="blue">Синяя</option>
+                    </select>
                     <h6>Что на ней написано?</h6>
-                    <input class="form-check-input" type="radio" name="m4_TextButton" id="m4_check_1" checked>
-                    <label class="form-check-label text-" for="m4_check_1">Взорвать</label>
-                    <input class="form-check-input" type="radio" name="m4_TextButton" id="m4_check_2">
-                    <label class="form-check-label text-" for="m4_check_2">Держать</label>
-                    <input class="form-check-input" type="radio" name="m4_TextButton" id="m4_check_3">
-                    <label class="form-check-label text-" for="m4_check_3">Нажать</label>
-                    <input class="form-check-input" type="radio" name="m4_TextButton" id="m4_check_4">
-                    <label class="form-check-label text-" for="m4_check_4">Прервать</label>
+                    <select class="form-select" id="m4_text" name="m4_text">
+                        <option disabled selected>Выберите цвет</option>
+                        <option value="boom">Взорвать</option>
+                        <option value="hold">Держать</option>
+                        <option value="press">Нажать</option>
+                        <option value="stop">Прервать</option>
+                    </select>
                     <br>
                     <button class="btn btn-primary" onclick="CheckModule4()">Принять</button>
                     <h6 class="mt-5">Пункт "Удержание кнопки"</h6>
@@ -728,22 +725,22 @@
                 <div class="col-12">
                     <h4 class="text-success">Модуль "Последовательности проводов":</h4>
                     <h6>Выберите цвет провода.</h6>
-                    <input class="form-check-input" type="radio" name="m9_Color" id="m9_check_red" checked>
-                    <label class="form-check-label text-danger" for="m9_check_red">Красный</label>
-                    <input class="form-check-input" type="radio" name="m9_Color" id="m9_check_blue">
-                    <label class="form-check-label text-primary" for="m9_check_blue">Синий</label>
-                    <input class="form-check-input" type="radio" name="m9_Color" id="m9_check_black">
-                    <label class="form-check-label text-dark" for="m9_check_black">Чёрный</label>
+                    <select class="form-select" id="m9_color" name="m9_color">
+                        <option disabled selected>Выберите цвет</option>
+                        <option style="color: red;" value="red">Красный</option>
+                        <option style="color: blue;" value="blue">Синий</option>
+                        <option style="color: black;" value="black">Чёрный</option>
+                    </select>
                     <h6>Введите позицию провода, т.е. какой это провод по счёту с самого начала (конкретно этого
                         цвета).</h6>
                     <input class="form-control" type="number" id="m9_count" min="1" max="9" placeholder="Позиция">
                     <h6>Выберите букву слота, в которых подключён этот провод.</h6>
-                    <input class="form-check-input" type="radio" name="m9_Letter" id="m9_check_A" checked>
-                    <label class="form-check-label" for="m9_check_A">А</label>
-                    <input class="form-check-input" type="radio" name="m9_Letter" id="m9_check_B">
-                    <label class="form-check-label" for="m9_check_B">Б</label>
-                    <input class="form-check-input" type="radio" name="m9_Letter" id="m9_check_V">
-                    <label class="form-check-label" for="m9_check_V">В</label>
+                    <select class="form-select" id="m9_letter" name="m9_letter">
+                        <option disabled selected>Выберите слот</option>
+                        <option value="A">А</option>
+                        <option value="B">Б</option>
+                        <option value="V">В</option>
+                    </select>
                     <br>
                     <button class="btn btn-primary" onclick="CheckModule9()">Резать или нет?</button>
                 </div>
@@ -757,82 +754,67 @@
                     <h4 class="text-success">Модуль "Провода":</h4>
                     <h6>Выберите цвет для каждого провода.</h6>
                     1.
-                    <input class="form-check-input" type="radio" name="m10_Wire1" id="m10_check_w1_white" checked>
-                    <label class="form-check-label" for="m10_check_w1_white">Белый</label>
-                    <input class="form-check-input" type="radio" name="m10_Wire1" id="m10_check_w1_yellow">
-                    <label class="form-check-label text-warning" for="m10_check_w1_yellow">Жёлтый</label>
-                    <input class="form-check-input" type="radio" name="m10_Wire1" id="m10_check_w1_red">
-                    <label class="form-check-label text-danger" for="m10_check_w1_red">Красный</label>
-                    <input class="form-check-input" type="radio" name="m10_Wire1" id="m10_check_w1_blue">
-                    <label class="form-check-label text-primary" for="m10_check_w1_blue">Синий</label>
-                    <input class="form-check-input" type="radio" name="m10_Wire1" id="m10_check_w1_black">
-                    <label class="form-check-label text-dark" for="m10_check_w1_black">Чёрный</label>
+                    <select class="form-select" id="m10_wire1" name="m10_wire1">
+                        <option disabled selected>Выберите цвет</option>
+                        <option style="background-color: black; color: white;" value="red">Белый</option>
+                        <option style="color: yellow;" value="yellow">Жёлтый</option>
+                        <option style="color: red;" value="red">Красный</option>
+                        <option style="color: blue;" value="blue">Синий</option>
+                        <option style="color: black;" value="black">Чёрный</option>
+                    </select>
                     <br>
                     2.
-                    <input class="form-check-input" type="radio" name="m10_Wire2" id="m10_check_w2_white" checked>
-                    <label class="form-check-label" for="m10_check_w2_white">Белый</label>
-                    <input class="form-check-input" type="radio" name="m10_Wire2" id="m10_check_w2_yellow">
-                    <label class="form-check-label text-warning" for="m10_check_w2_yellow">Жёлтый</label>
-                    <input class="form-check-input" type="radio" name="m10_Wire2" id="m10_check_w2_red">
-                    <label class="form-check-label text-danger" for="m10_check_w2_red">Красный</label>
-                    <input class="form-check-input" type="radio" name="m10_Wire2" id="m10_check_w2_blue">
-                    <label class="form-check-label text-primary" for="m10_check_w2_blue">Синий</label>
-                    <input class="form-check-input" type="radio" name="m10_Wire2" id="m10_check_w2_black">
-                    <label class="form-check-label text-dark" for="m10_check_w2_black">Чёрный</label>
+                    <select class="form-select" id="m10_wire2" name="m10_wire2">
+                        <option disabled selected>Выберите цвет</option>
+                        <option style="background-color: black; color: white;" value="red">Белый</option>
+                        <option style="color: yellow;" value="yellow">Жёлтый</option>
+                        <option style="color: red;" value="red">Красный</option>
+                        <option style="color: blue;" value="blue">Синий</option>
+                        <option style="color: black;" value="black">Чёрный</option>
+                    </select>
                     <br>
                     3.
-                    <input class="form-check-input" type="radio" name="m10_Wire3" id="m10_check_w3_white" checked>
-                    <label class="form-check-label" for="m10_check_w3_white">Белый</label>
-                    <input class="form-check-input" type="radio" name="m10_Wire3" id="m10_check_w3_yellow">
-                    <label class="form-check-label text-warning" for="m10_check_w3_yellow">Жёлтый</label>
-                    <input class="form-check-input" type="radio" name="m10_Wire3" id="m10_check_w3_red">
-                    <label class="form-check-label text-danger" for="m10_check_w3_red">Красный</label>
-                    <input class="form-check-input" type="radio" name="m10_Wire3" id="m10_check_w3_blue">
-                    <label class="form-check-label text-primary" for="m10_check_w3_blue">Синий</label>
-                    <input class="form-check-input" type="radio" name="m10_Wire3" id="m10_check_w3_black">
-                    <label class="form-check-label text-dark" for="m10_check_w3_black">Чёрный</label>
+                    <select class="form-select" id="m10_wire3" name="m10_wire3">
+                        <option disabled selected>Выберите цвет</option>
+                        <option style="background-color: black; color: white;" value="red">Белый</option>
+                        <option style="color: yellow;" value="yellow">Жёлтый</option>
+                        <option style="color: red;" value="red">Красный</option>
+                        <option style="color: blue;" value="blue">Синий</option>
+                        <option style="color: black;" value="black">Чёрный</option>
+                    </select>
                     <br>
                     4.
-                    <input class="form-check-input" type="radio" name="m10_Wire4" id="m10_check_w4_white" checked>
-                    <label class="form-check-label" for="m10_check_w4_white">Белый</label>
-                    <input class="form-check-input" type="radio" name="m10_Wire4" id="m10_check_w4_yellow">
-                    <label class="form-check-label text-warning" for="m10_check_w4_yellow">Жёлтый</label>
-                    <input class="form-check-input" type="radio" name="m10_Wire4" id="m10_check_w4_red">
-                    <label class="form-check-label text-danger" for="m10_check_w4_red">Красный</label>
-                    <input class="form-check-input" type="radio" name="m10_Wire4" id="m10_check_w4_blue">
-                    <label class="form-check-label text-primary" for="m10_check_w4_blue">Синий</label>
-                    <input class="form-check-input" type="radio" name="m10_Wire4" id="m10_check_w4_black">
-                    <label class="form-check-label text-dark" for="m10_check_w4_black">Чёрный</label>
-                    <input class="form-check-input" type="radio" name="m10_Wire4" id="m10_check_w4_no">
-                    <label class="form-check-label text-info" for="m10_check_w4_no">Провод отсутствует</label>
+                    <select class="form-select" id="m10_wire4" name="m10_wire4">
+                        <option disabled selected>Выберите цвет</option>
+                        <option style="background-color: black; color: white;" value="red">Белый</option>
+                        <option style="color: yellow;" value="yellow">Жёлтый</option>
+                        <option style="color: red;" value="red">Красный</option>
+                        <option style="color: blue;" value="blue">Синий</option>
+                        <option style="color: black;" value="black">Чёрный</option>
+                        <option style="color: cyan;" value="none">Провод отсутствует</option>
+                    </select>
                     <br>
                     5.
-                    <input class="form-check-input" type="radio" name="m10_Wire5" id="m10_check_w5_white" checked>
-                    <label class="form-check-label" for="m10_check_w1_white">Белый</label>
-                    <input class="form-check-input" type="radio" name="m10_Wire5" id="m10_check_w5_yellow">
-                    <label class="form-check-label text-warning" for="m10_check_w5_yellow">Жёлтый</label>
-                    <input class="form-check-input" type="radio" name="m10_Wire5" id="m10_check_w5_red">
-                    <label class="form-check-label text-danger" for="m10_check_w5_red">Красный</label>
-                    <input class="form-check-input" type="radio" name="m10_Wire5" id="m10_check_w5_blue">
-                    <label class="form-check-label text-primary" for="m10_check_w5_blue">Синий</label>
-                    <input class="form-check-input" type="radio" name="m10_Wire5" id="m10_check_51_black">
-                    <label class="form-check-label text-dark" for="m10_check_w5_black">Чёрный</label>
-                    <input class="form-check-input" type="radio" name="m10_Wire5" id="m10_check_w5_no">
-                    <label class="form-check-label text-info" for="m10_check_w5_no">Провод отсутствует</label>
+                    <select class="form-select" id="m10_wire5" name="m10_wire5">
+                        <option disabled selected>Выберите цвет</option>
+                        <option style="background-color: black; color: white;" value="red">Белый</option>
+                        <option style="color: yellow;" value="yellow">Жёлтый</option>
+                        <option style="color: red;" value="red">Красный</option>
+                        <option style="color: blue;" value="blue">Синий</option>
+                        <option style="color: black;" value="black">Чёрный</option>
+                        <option style="color: cyan;" value="none">Провод отсутствует</option>
+                    </select>
                     <br>
                     6.
-                    <input class="form-check-input" type="radio" name="m10_Wire6" id="m10_check_w6_white" checked>
-                    <label class="form-check-label" for="m10_check_w1_white">Белый</label>
-                    <input class="form-check-input" type="radio" name="m10_Wire6" id="m10_check_w6_yellow">
-                    <label class="form-check-label text-warning" for="m10_check_w6_yellow">Жёлтый</label>
-                    <input class="form-check-input" type="radio" name="m10_Wire6" id="m10_check_w6_red">
-                    <label class="form-check-label text-danger" for="m10_check_w6_red">Красный</label>
-                    <input class="form-check-input" type="radio" name="m10_Wire6" id="m10_check_w6_blue">
-                    <label class="form-check-label text-primary" for="m10_check_w6_blue">Синий</label>
-                    <input class="form-check-input" type="radio" name="m10_Wire6" id="m10_check_w6_black">
-                    <label class="form-check-label text-dark" for="m10_check_w6_black">Чёрный</label>
-                    <input class="form-check-input" type="radio" name="m10_Wire6" id="m10_check_w6_no">
-                    <label class="form-check-label text-info" for="m10_check_w6_no">Провод отсутствует</label>
+                    <select class="form-select" id="m10_wire6" name="m10_wire6">
+                        <option disabled selected>Выберите цвет</option>
+                        <option style="background-color: black; color: white;" value="red">Белый</option>
+                        <option style="color: yellow;" value="yellow">Жёлтый</option>
+                        <option style="color: red;" value="red">Красный</option>
+                        <option style="color: blue;" value="blue">Синий</option>
+                        <option style="color: black;" value="black">Чёрный</option>
+                        <option style="color: cyan;" value="none">Провод отсутствует</option>
+                    </select>
                     <br>
                     <button class="btn btn-primary" onclick="CheckModule10()">Какой резать?</button>
                 </div>
