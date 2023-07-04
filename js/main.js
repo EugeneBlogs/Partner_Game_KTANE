@@ -294,66 +294,66 @@ function CheckModule1() {
 
 function CheckModule2() {
     if (serial_number.includes('A') || serial_number.includes('E') || serial_number.includes('I') || serial_number.includes('O') || serial_number.includes('U')) {
-        if (document.getElementById("m2_check_mistake-0").checked) {
-            if (document.getElementById("m2_check_red").checked) {
+        if (document.getElementById("m2_mistake").value == "0") {
+            if (document.getElementById("m2_color").value == "red") {
                 alert("Нажмите на кнопку СИНЕГО цвета.")
-            } else if (document.getElementById("m2_check_yellow").checked) {
+            } else if (document.getElementById("m2_color").value == "yellow") {
                 alert("Нажмите на кнопку ЗЕЛЁНОГО цвета.")
-            } else if (document.getElementById("m2_check_green").checked) {
+            } else if (document.getElementById("m2_color").value == "green") {
                 alert("Нажмите на кнопку ЖЁЛТОГО цвета.")
-            } else if (document.getElementById("m2_check_blue").checked) {
+            } else if (document.getElementById("m2_color").value == "blue") {
                 alert("Нажмите на кнопку КРАСНОГО цвета.")
             }
-        } else if (document.getElementById("m2_check_mistake-1").checked) {
-            if (document.getElementById("m2_check_red").checked) {
+        } else if (document.getElementById("m2_mistake").value == "1") {
+            if (document.getElementById("m2_color").value == "red") {
                 alert("Нажмите на кнопку ЖЁЛТОГО цвета.")
-            } else if (document.getElementById("m2_check_yellow").checked) {
+            } else if (document.getElementById("m2_color").value == "yellow") {
                 alert("Нажмите на кнопку КРАСНОГО цвета.")
-            } else if (document.getElementById("m2_check_green").checked) {
+            } else if (document.getElementById("m2_color").value == "green") {
                 alert("Нажмите на кнопку СИНЕГО цвета.")
-            } else if (document.getElementById("m2_check_blue").checked) {
+            } else if (document.getElementById("m2_color").value == "blue") {
                 alert("Нажмите на кнопку ЗЕЛЁНОГО цвета.")
             }
-        } else if (document.getElementById("m2_check_mistake-2").checked) {
-            if (document.getElementById("m2_check_red").checked) {
+        } else if (document.getElementById("m2_mistake").value == "2") {
+            if (document.getElementById("m2_color").value == "red") {
                 alert("Нажмите на кнопку ЗЕЛЁНОГО цвета.")
-            } else if (document.getElementById("m2_check_yellow").checked) {
+            } else if (document.getElementById("m2_color").value == "yellow") {
                 alert("Нажмите на кнопку СИНЕГО цвета.")
-            } else if (document.getElementById("m2_check_green").checked) {
+            } else if (document.getElementById("m2_color").value == "green") {
                 alert("Нажмите на кнопку ЖЁЛТОГО цвета.")
-            } else if (document.getElementById("m2_check_blue").checked) {
+            } else if (document.getElementById("m2_color").value == "blue") {
                 alert("Нажмите на кнопку КРАСНОГО цвета.")
             }
         }
     } else {
-        if (document.getElementById("m2_check_mistake-0").checked) {
-            if (document.getElementById("m2_check_red").checked) {
+        if (document.getElementById("m2_mistake").value == "0") {
+            if (document.getElementById("m2_color").value == "red") {
                 alert("Нажмите на кнопку СИНЕГО цвета.")
-            } else if (document.getElementById("m2_check_yellow").checked) {
+            } else if (document.getElementById("m2_color").value == "yellow") {
                 alert("Нажмите на кнопку КРАСНОГО цвета.")
-            } else if (document.getElementById("m2_check_green").checked) {
+            } else if (document.getElementById("m2_color").value == "green") {
                 alert("Нажмите на кнопку ЗЕЛЁНОГО цвета.")
-            } else if (document.getElementById("m2_check_blue").checked) {
+            } else if (document.getElementById("m2_color").value == "blue") {
                 alert("Нажмите на кнопку ЖЁЛТОГО цвета.")
             }
-        } else if (document.getElementById("m2_check_mistake-1").checked) {
-            if (document.getElementById("m2_check_red").checked) {
+        } else if (document.getElementById("m2_mistake").value == "1") {
+            if (document.getElementById("m2_color").value == "red") {
                 alert("Нажмите на кнопку КРАСНОГО цвета.")
-            } else if (document.getElementById("m2_check_yellow").checked) {
+            } else if (document.getElementById("m2_color").value == "yellow") {
                 alert("Нажмите на кнопку ЗЕЛЁНОГО цвета.")
-            } else if (document.getElementById("m2_check_green").checked) {
+            } else if (document.getElementById("m2_color").value == "green") {
                 alert("Нажмите на кнопку ЖЁЛТОГО цвета.")
-            } else if (document.getElementById("m2_check_blue").checked) {
+            } else if (document.getElementById("m2_color").value == "blue") {
                 alert("Нажмите на кнопку СИНЕГО цвета.")
             }
-        } else if (document.getElementById("m2_check_mistake-2").checked) {
-            if (document.getElementById("m2_check_red").checked) {
+        } else if (document.getElementById("m2_mistake").value == "2") {
+            if (document.getElementById("m2_color").value == "red") {
                 alert("Нажмите на кнопку ЖЁЛТОГО цвета.")
-            } else if (document.getElementById("m2_check_yellow").checked) {
+            } else if (document.getElementById("m2_color").value == "yellow") {
                 alert("Нажмите на кнопку КРАСНОГО цвета.")
-            } else if (document.getElementById("m2_check_green").checked) {
+            } else if (document.getElementById("m2_color").value == "green") {
                 alert("Нажмите на кнопку СИНЕГО цвета.")
-            } else if (document.getElementById("m2_check_blue").checked) {
+            } else if (document.getElementById("m2_color").value == "blue") {
                 alert("Нажмите на кнопку ЗЕЛЁНОГО цвета.")
             }
         }
@@ -571,17 +571,17 @@ function CheckModule3() {
 }
 
 function CheckModule4() {
-    if (document.getElementById("m4_check_blue").checked && document.getElementById("m4_check_4").checked) {
+    if (document.getElementById("m4_color").value == "blue" && document.getElementById("m4_text").value == "stop") {
         alert('ДЕРЖИТЕ кнопку и смотрите пункт "Удержание кнопки".')
-    } else if (batteries > 1 && document.getElementById("m4_check_1").checked) {
+    } else if (batteries > 1 && document.getElementById("m4_text").value == "boom") {
         alert("НАЖМИТЕ и резко отпустите кнопку.")
-    } else if (i_car && document.getElementById("m4_check_white").checked) {
+    } else if (i_car && document.getElementById("m4_color").value == "white") {
         alert('ДЕРЖИТЕ кнопку и смотрите пункт "Удержание кнопки".')
     } else if (batteries > 2 && i_frk) {
         alert("НАЖМИТЕ и резко отпустите кнопку.")
-    } else if (document.getElementById("m4_check_yellow").checked) {
+    } else if (document.getElementById("m4_color").value == "yellow") {
         alert('ДЕРЖИТЕ кнопку и смотрите пункт "Удержание кнопки".')
-    } else if (document.getElementById("m4_check_red").checked && document.getElementById("m4_check_2").checked) {
+    } else if (document.getElementById("m4_color").value == "red" && document.getElementById("m4_text").value == "hold") {
         alert("НАЖМИТЕ и резко отпустите кнопку.")
     } else {
         alert('ДЕРЖИТЕ кнопку и смотрите пункт "Удержание кнопки".')
@@ -855,39 +855,39 @@ function CheckModule8() {
 }
 
 function CheckModule9() {
-    if (document.getElementById("m9_check_red").checked) {
+    if (document.getElementById("m9_color").value == "red") {
         if (Number(document.getElementById("m9_count").value) == 1) {
-            if (document.getElementById("m9_check_V").checked) {
+            if (document.getElementById("m9_letter").value == "V") {
                 alert("РЕЗАТЬ!")
             } else {
                 alert("НЕ РЕЗАТЬ!")
             }
         } else if (Number(document.getElementById("m9_count").value) == 2) {
-            if (document.getElementById("m9_check_B").checked) {
+            if (document.getElementById("m9_letter").value == "B") {
                 alert("РЕЗАТЬ!")
             } else {
                 alert("НЕ РЕЗАТЬ!")
             }
         } else if (Number(document.getElementById("m9_count").value) == 3) {
-            if (document.getElementById("m9_check_A").checked) {
+            if (document.getElementById("m9_letter").value == "A") {
                 alert("РЕЗАТЬ!")
             } else {
                 alert("НЕ РЕЗАТЬ!")
             }
         } else if (Number(document.getElementById("m9_count").value) == 4) {
-            if (document.getElementById("m9_check_A").checked || document.getElementById("m9_check_V").checked) {
+            if (document.getElementById("m9_letter").value == "A" || document.getElementById("m9_letter").value == "V") {
                 alert("РЕЗАТЬ!")
             } else {
                 alert("НЕ РЕЗАТЬ!")
             }
         } else if (Number(document.getElementById("m9_count").value) == 5) {
-            if (document.getElementById("m9_check_B").checked) {
+            if (document.getElementById("m9_letter").value == "B") {
                 alert("РЕЗАТЬ!")
             } else {
                 alert("НЕ РЕЗАТЬ!")
             }
         } else if (Number(document.getElementById("m9_count").value) == 6) {
-            if (document.getElementById("m9_check_A").checked || document.getElementById("m9_check_V").checked) {
+            if (document.getElementById("m9_letter").value == "A" || document.getElementById("m9_letter").value == "V") {
                 alert("РЕЗАТЬ!")
             } else {
                 alert("НЕ РЕЗАТЬ!")
@@ -895,13 +895,13 @@ function CheckModule9() {
         } else if (Number(document.getElementById("m9_count").value) == 7) {
             alert("РЕЗАТЬ!")
         } else if (Number(document.getElementById("m9_count").value) == 8) {
-            if (document.getElementById("m9_check_A").checked || document.getElementById("m9_check_B").checked) {
+            if (document.getElementById("m9_letter").value == "A" || document.getElementById("m9_letter").value == "B") {
                 alert("РЕЗАТЬ!")
             } else {
                 alert("НЕ РЕЗАТЬ!")
             }
         } else if (Number(document.getElementById("m9_count").value) == 9) {
-            if (document.getElementById("m9_check_B").checked) {
+            if (document.getElementById("m9_letter").value == "B") {
                 alert("РЕЗАТЬ!")
             } else {
                 alert("НЕ РЕЗАТЬ!")
@@ -909,57 +909,57 @@ function CheckModule9() {
         } else {
             alert("Неверно заполненные данные.")
         }
-    } else if (document.getElementById("m9_check_blue").checked) {
+    } else if (document.getElementById("m9_color").value == "blue") {
         if (Number(document.getElementById("m9_count").value) == 1) {
-            if (document.getElementById("m9_check_B").checked) {
+            if (document.getElementById("m9_letter").value == "B") {
                 alert("РЕЗАТЬ!")
             } else {
                 alert("НЕ РЕЗАТЬ!")
             }
         } else if (Number(document.getElementById("m9_count").value) == 2) {
-            if (document.getElementById("m9_check_A").checked || document.getElementById("m9_check_V").checked) {
+            if (document.getElementById("m9_letter").value == "A" || document.getElementById("m9_letter").value == "V") {
                 alert("РЕЗАТЬ!")
             } else {
                 alert("НЕ РЕЗАТЬ!")
             }
         } else if (Number(document.getElementById("m9_count").value) == 3) {
-            if (document.getElementById("m9_check_B").checked) {
+            if (document.getElementById("m9_letter").value == "B") {
                 alert("РЕЗАТЬ!")
             } else {
                 alert("НЕ РЕЗАТЬ!")
             }
         } else if (Number(document.getElementById("m9_count").value) == 4) {
-            if (document.getElementById("m9_check_A").checked) {
+            if (document.getElementById("m9_letter").value == "A") {
                 alert("РЕЗАТЬ!")
             } else {
                 alert("НЕ РЕЗАТЬ!")
             }
         } else if (Number(document.getElementById("m9_count").value) == 5) {
-            if (document.getElementById("m9_check_B").checked) {
+            if (document.getElementById("m9_letter").value == "B") {
                 alert("РЕЗАТЬ!")
             } else {
                 alert("НЕ РЕЗАТЬ!")
             }
         } else if (Number(document.getElementById("m9_count").value) == 6) {
-            if (document.getElementById("m9_check_B").checked || document.getElementById("m9_check_V").checked) {
+            if (document.getElementById("m9_letter").value == "B" || document.getElementById("m9_letter").value == "V") {
                 alert("РЕЗАТЬ!")
             } else {
                 alert("НЕ РЕЗАТЬ!")
             }
         } else if (Number(document.getElementById("m9_count").value) == 7) {
-            if (document.getElementById("m9_check_V").checked) {
+            if (document.getElementById("m9_letter").value == "V") {
                 alert("РЕЗАТЬ!")
             } else {
                 alert("НЕ РЕЗАТЬ!")
             }
         } else if (Number(document.getElementById("m9_count").value) == 8) {
-            if (document.getElementById("m9_check_A").checked || document.getElementById("m9_check_V").checked) {
+            if (document.getElementById("m9_letter").value == "A" || document.getElementById("m9_letter").value == "V") {
                 alert("РЕЗАТЬ!")
             } else {
                 alert("НЕ РЕЗАТЬ!")
             }
         } else if (Number(document.getElementById("m9_count").value) == 9) {
-            if (document.getElementById("m9_check_A").checked) {
+            if (document.getElementById("m9_letter").value == "A") {
                 alert("РЕЗАТЬ!")
             } else {
                 alert("НЕ РЕЗАТЬ!")
@@ -967,53 +967,53 @@ function CheckModule9() {
         } else {
             alert("Неверно заполненные данные.")
         }
-    } else if (document.getElementById("m9_check_black").checked) {
+    } else if (document.getElementById("m9_color").value == "black") {
         if (Number(document.getElementById("m9_count").value) == 1) {
             alert("РЕЗАТЬ!")
         } else if (Number(document.getElementById("m9_count").value) == 2) {
-            if (document.getElementById("m9_check_A").checked || document.getElementById("m9_check_V").checked) {
+            if (document.getElementById("m9_letter").value == "A" || document.getElementById("m9_letter").value == "V") {
                 alert("РЕЗАТЬ!")
             } else {
                 alert("НЕ РЕЗАТЬ!")
             }
         } else if (Number(document.getElementById("m9_count").value) == 3) {
-            if (document.getElementById("m9_check_B").checked) {
+            if (document.getElementById("m9_letter").value == "B") {
                 alert("РЕЗАТЬ!")
             } else {
                 alert("НЕ РЕЗАТЬ!")
             }
         } else if (Number(document.getElementById("m9_count").value) == 4) {
-            if (document.getElementById("m9_check_A").checked || document.getElementById("m9_check_V").checked) {
+            if (document.getElementById("m9_letter").value == "A" || document.getElementById("m9_letter").value == "V") {
                 alert("РЕЗАТЬ!")
             } else {
                 alert("НЕ РЕЗАТЬ!")
             }
         } else if (Number(document.getElementById("m9_count").value) == 5) {
-            if (document.getElementById("m9_check_B").checked) {
+            if (document.getElementById("m9_letter").value == "B") {
                 alert("РЕЗАТЬ!")
             } else {
                 alert("НЕ РЕЗАТЬ!")
             }
         } else if (Number(document.getElementById("m9_count").value) == 6) {
-            if (document.getElementById("m9_check_B").checked || document.getElementById("m9_check_V").checked) {
+            if (document.getElementById("m9_letter").value == "B" || document.getElementById("m9_letter").value == "V") {
                 alert("РЕЗАТЬ!")
             } else {
                 alert("НЕ РЕЗАТЬ!")
             }
         } else if (Number(document.getElementById("m9_count").value) == 7) {
-            if (document.getElementById("m9_check_A").checked || document.getElementById("m9_check_B").checked) {
+            if (document.getElementById("m9_letter").value == "A" || document.getElementById("m9_letter").value == "B") {
                 alert("РЕЗАТЬ!")
             } else {
                 alert("НЕ РЕЗАТЬ!")
             }
         } else if (Number(document.getElementById("m9_count").value) == 8) {
-            if (document.getElementById("m9_check_V").checked) {
+            if (document.getElementById("m9_letter").value == "V") {
                 alert("РЕЗАТЬ!")
             } else {
                 alert("НЕ РЕЗАТЬ!")
             }
         } else if (Number(document.getElementById("m9_count").value) == 9) {
-            if (document.getElementById("m9_check_V").checked) {
+            if (document.getElementById("m9_letter").value == "V") {
                 alert("РЕЗАТЬ!")
             } else {
                 alert("НЕ РЕЗАТЬ!")
@@ -1026,31 +1026,31 @@ function CheckModule9() {
 
 function CheckModule10() {
     let count = 6
-    if (document.getElementById("m10_check_w4_no").checked) {
+    if (document.getElementById("m10_wire4").value == "none") {
         count = 3
-        if (!document.getElementById("m10_check_w5_no").checked || !document.getElementById("m10_check_w6_no").checked) {
+        if (document.getElementById("m10_wire5").value != "none" || document.getElementById("m10_wire6").value != "none") {
             alert("Невозможный случай.")
             return 0
         }
     }
-    else if (document.getElementById("m10_check_w5_no").checked) {
+    else if (document.getElementById("m10_wire5").value == "none") {
         count = 4
-        if (!document.getElementById("m10_check_w6_no").checked) {
+        if (document.getElementById("m10_wire6").value != "none") {
             alert("Невозможный случай.")
             return 0
         }
     }
-    else if (document.getElementById("m10_check_w6_no").checked) {
+    else if (document.getElementById("m10_wire6").value == "none") {
         count = 5
     }
     if (count == 3) {
         let blueWires = 0
-        if (document.getElementById("m10_check_w1_blue").checked) blueWires++
-        if (document.getElementById("m10_check_w2_blue").checked) blueWires++
-        if (document.getElementById("m10_check_w3_blue").checked) blueWires++
-        if (!document.getElementById("m10_check_w1_red").checked && !document.getElementById("m10_check_w2_red").checked && !document.getElementById("m10_check_w3_red").checked) {
+        if (document.getElementById("m10_wire1").value == "blue") blueWires++
+        if (document.getElementById("m10_wire2").value == "blue") blueWires++
+        if (document.getElementById("m10_wire3").value == "blue") blueWires++
+        if (!document.getElementById("m10_wire1").value == "red" && !document.getElementById("m10_wire2").value == "red" && !document.getElementById("m10_wire3").value == "red") {
             alert("Резать ВТОРОЙ.")
-        } else if (document.getElementById("m10_check_w3_white").checked) {
+        } else if (document.getElementById("m10_wire3").value == "white") {
             alert("Резать ПОСЛЕДНИЙ.")
         } else if (blueWires > 1) {
             alert("Резать ПОСЛЕДНИЙ СИНИЙ.")
@@ -1059,25 +1059,25 @@ function CheckModule10() {
         }
     } else if (count == 4) {
         let redWires = 0
-        if (document.getElementById("m10_check_w1_red").checked) redWires++
-        if (document.getElementById("m10_check_w2_red").checked) redWires++
-        if (document.getElementById("m10_check_w3_red").checked) redWires++
-        if (document.getElementById("m10_check_w4_red").checked) redWires++
+        if (document.getElementById("m10_wire1").value == "red") redWires++
+        if (document.getElementById("m10_wire2").value == "red") redWires++
+        if (document.getElementById("m10_wire3").value == "red") redWires++
+        if (document.getElementById("m10_wire4").value == "red") redWires++
         let blueWires = 0
-        if (document.getElementById("m10_check_w1_blue").checked) blueWires++
-        if (document.getElementById("m10_check_w2_blue").checked) blueWires++
-        if (document.getElementById("m10_check_w3_blue").checked) blueWires++
-        if (document.getElementById("m10_check_w4_blue").checked) blueWires++
+        if (document.getElementById("m10_wire1").value == "blue") blueWires++
+        if (document.getElementById("m10_wire2").value == "blue") blueWires++
+        if (document.getElementById("m10_wire3").value == "blue") blueWires++
+        if (document.getElementById("m10_wire4").value == "blue") blueWires++
         let yellowWires = 0
-        if (document.getElementById("m10_check_w1_yellow").checked) yellowWires++
-        if (document.getElementById("m10_check_w2_yellow").checked) yellowWires++
-        if (document.getElementById("m10_check_w3_yellow").checked) yellowWires++
-        if (document.getElementById("m10_check_w4_yellow").checked) yellowWires++
+        if (document.getElementById("m10_wire1").value == "yellow") yellowWires++
+        if (document.getElementById("m10_wire2").value == "yellow") yellowWires++
+        if (document.getElementById("m10_wire3").value == "yellow") yellowWires++
+        if (document.getElementById("m10_wire4").value == "yellow") yellowWires++
         if (redWires > 1) {
             if (Number(getLatestDigit(serial_number)) == 1 || Number(getLatestDigit(serial_number)) == 3 || Number(getLatestDigit(serial_number)) == 5 || Number(getLatestDigit(serial_number)) == 7 || Number(getLatestDigit(serial_number)) == 9) {
                 alert("Резать ПОСЛЕДНИЙ КРАСНЫЙ.")
             }
-        } else if (document.getElementById("m10_check_w4_yellow").checked && redWires == 0) {
+        } else if (document.getElementById("m10_wire4").value == "yellow" && redWires == 0) {
             alert("Резать ПЕРВЫЙ.")
         } else if (blueWires == 1) {
             alert("Резать ПЕРВЫЙ.")
@@ -1088,24 +1088,24 @@ function CheckModule10() {
         }
     } else if (count == 5) {
         let redWires = 0
-        if (document.getElementById("m10_check_w1_red").checked) redWires++
-        if (document.getElementById("m10_check_w2_red").checked) redWires++
-        if (document.getElementById("m10_check_w3_red").checked) redWires++
-        if (document.getElementById("m10_check_w4_red").checked) redWires++
-        if (document.getElementById("m10_check_w5_red").checked) redWires++
+        if (document.getElementById("m10_wire1").value == "red") redWires++
+        if (document.getElementById("m10_wire2").value == "red") redWires++
+        if (document.getElementById("m10_wire3").value == "red") redWires++
+        if (document.getElementById("m10_wire4").value == "red") redWires++
+        if (document.getElementById("m10_wire5").value == "red") redWires++
         let blackWires = 0
-        if (document.getElementById("m10_check_w1_black").checked) blackWires++
-        if (document.getElementById("m10_check_w2_black").checked) blackWires++
-        if (document.getElementById("m10_check_w3_black").checked) blackWires++
-        if (document.getElementById("m10_check_w4_black").checked) blackWires++
-        if (document.getElementById("m10_check_w5_black").checked) blackWires++
+        if (document.getElementById("m10_wire1").value == "black") blackWires++
+        if (document.getElementById("m10_wire2").value == "black") blackWires++
+        if (document.getElementById("m10_wire3").value == "black") blackWires++
+        if (document.getElementById("m10_wire4").value == "black") blackWires++
+        if (document.getElementById("m10_wire5").value == "black") blackWires++
         let yellowWires = 0
-        if (document.getElementById("m10_check_w1_yellow").checked) yellowWires++
-        if (document.getElementById("m10_check_w2_yellow").checked) yellowWires++
-        if (document.getElementById("m10_check_w3_yellow").checked) yellowWires++
-        if (document.getElementById("m10_check_w4_yellow").checked) yellowWires++
-        if (document.getElementById("m10_check_w5_yellow").checked) yellowWires++
-        if (document.getElementById("m10_check_w5_black").checked) {
+        if (document.getElementById("m10_wire1").value == "yellow") yellowWires++
+        if (document.getElementById("m10_wire2").value == "yellow") yellowWires++
+        if (document.getElementById("m10_wire3").value == "yellow") yellowWires++
+        if (document.getElementById("m10_wire4").value == "yellow") yellowWires++
+        if (document.getElementById("m10_wire5").value == "yellow") yellowWires++
+        if (document.getElementById("m10_wire5").value == "black") {
             if (Number(getLatestDigit(serial_number)) == 1 || Number(getLatestDigit(serial_number)) == 3 || Number(getLatestDigit(serial_number)) == 5 || Number(getLatestDigit(serial_number)) == 7 || Number(getLatestDigit(serial_number)) == 9) {
                 alert("Резать ЧЕТВЁРТЫЙ.")
             }
@@ -1118,26 +1118,26 @@ function CheckModule10() {
         }
     } else if (count == 6) {
         let yellowWires = 0
-        if (document.getElementById("m10_check_w1_yellow").checked) yellowWires++
-        if (document.getElementById("m10_check_w2_yellow").checked) yellowWires++
-        if (document.getElementById("m10_check_w3_yellow").checked) yellowWires++
-        if (document.getElementById("m10_check_w4_yellow").checked) yellowWires++
-        if (document.getElementById("m10_check_w5_yellow").checked) yellowWires++
-        if (document.getElementById("m10_check_w6_yellow").checked) yellowWires++
+        if (document.getElementById("m10_wire1").value == "yellow") yellowWires++
+        if (document.getElementById("m10_wire2").value == "yellow") yellowWires++
+        if (document.getElementById("m10_wire3").value == "yellow") yellowWires++
+        if (document.getElementById("m10_wire4").value == "yellow") yellowWires++
+        if (document.getElementById("m10_wire5").value == "yellow") yellowWires++
+        if (document.getElementById("m10_wire6").value == "yellow") yellowWires++
         let whiteWires = 0
-        if (document.getElementById("m10_check_w1_white").checked) whiteWires++
-        if (document.getElementById("m10_check_w2_white").checked) whiteWires++
-        if (document.getElementById("m10_check_w3_white").checked) whiteWires++
-        if (document.getElementById("m10_check_w4_white").checked) whiteWires++
-        if (document.getElementById("m10_check_w5_white").checked) whiteWires++
-        if (document.getElementById("m10_check_w6_white").checked) whiteWires++
+        if (document.getElementById("m10_wire1").value == "white") whiteWires++
+        if (document.getElementById("m10_wire2").value == "white") whiteWires++
+        if (document.getElementById("m10_wire3").value == "white") whiteWires++
+        if (document.getElementById("m10_wire4").value == "white") whiteWires++
+        if (document.getElementById("m10_wire5").value == "white") whiteWires++
+        if (document.getElementById("m10_wire6").value == "white") whiteWires++
         let redWires = 0
-        if (document.getElementById("m10_check_w1_red").checked) redWires++
-        if (document.getElementById("m10_check_w2_red").checked) redWires++
-        if (document.getElementById("m10_check_w3_red").checked) redWires++
-        if (document.getElementById("m10_check_w4_red").checked) redWires++
-        if (document.getElementById("m10_check_w5_red").checked) redWires++
-        if (document.getElementById("m10_check_w6_red").checked) redWires++
+        if (document.getElementById("m10_wire1").value == "red") redWires++
+        if (document.getElementById("m10_wire2").value == "red") redWires++
+        if (document.getElementById("m10_wire3").value == "red") redWires++
+        if (document.getElementById("m10_wire4").value == "red") redWires++
+        if (document.getElementById("m10_wire5").value == "red") redWires++
+        if (document.getElementById("m10_wire6").value == "red") redWires++
         if (yellowWires == 0) {
             if (Number(getLatestDigit(serial_number)) == 1 || Number(getLatestDigit(serial_number)) == 3 || Number(getLatestDigit(serial_number)) == 5 || Number(getLatestDigit(serial_number)) == 7 || Number(getLatestDigit(serial_number)) == 9) {
                 alert("Резать ТРЕТИЙ.")
@@ -1270,7 +1270,7 @@ function CheckModule11() {
             alert("РЕЗАТЬ!")
         }
     }
-   else if (blue) {
+    else if (blue) {
         if (star && light) {
             if (p_parallel) {
                 alert("РЕЗАТЬ!")
