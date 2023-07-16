@@ -92,6 +92,20 @@ function SaveInfromation() {
 function ChangeInfromation() {
     document.getElementById("information-bomb").style.display = "block"
     document.getElementById("select-module").style.display = "none"
+    document.getElementById("module_1").style.display = "none"
+    document.getElementById("module_2").style.display = "none"
+    document.getElementById("module_3").style.display = "none"
+    document.getElementById("module_4").style.display = "none"
+    document.getElementById("module_5").style.display = "none"
+    document.getElementById("module_6").style.display = "none"
+    document.getElementById("module_7").style.display = "none"
+    document.getElementById("module_8").style.display = "none"
+    document.getElementById("module_9").style.display = "none"
+    document.getElementById("module_10").style.display = "none"
+    document.getElementById("module_11").style.display = "none"
+    document.getElementById("module_12").style.display = "none"
+    document.getElementById("module_13").style.display = "none"
+    document.getElementById("module_14").style.display = "none"
 }
 
 function Choose(number) {
