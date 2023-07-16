@@ -89,6 +89,11 @@ function SaveInfromation() {
     }
 }
 
+function ChangeInfromation() {
+    document.getElementById("information-bomb").style.display = "block"
+    document.getElementById("select-module").style.display = "none"
+}
+
 function Choose(number) {
     document.getElementById("module_1").style.display = "none"
     document.getElementById("module_2").style.display = "none"
