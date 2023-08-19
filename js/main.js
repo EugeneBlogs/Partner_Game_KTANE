@@ -835,41 +835,166 @@ function CheckModule7() {
     }
 }
 
-function CheckModule8() {
-    if (document.getElementById("m8_first").value.toUpperCase() == "А") {
-        alert("Попробуйте слово:\n\nАЛЛЕЯ")
-    } else if (document.getElementById("m8_first").value.toUpperCase() == "Б") {
-        alert("Попробуйте слово:\n\nБОМБА")
-    } else if (document.getElementById("m8_first").value.toUpperCase() == "В") {
-        alert("Попробуйте слова:\n\nВВЕРХ, ВЗРЫВ, ВНИЗУ, ВЬЮГА")
-    } else if (document.getElementById("m8_first").value.toUpperCase() == "Г") {
-        alert("Попробуйте слова:\n\nГОРОХ, ГОТОВ, ГУСТО")
-    } else if (document.getElementById("m8_first").value.toUpperCase() == "Д") {
-        alert("Попробуйте слова:\n\nДАВАЙ, ДАВНО")
-    } else if (document.getElementById("m8_first").value.toUpperCase() == "К") {
-        alert("Попробуйте слова:\n\nКНИГА, КОНЕЦ")
-    } else if (document.getElementById("m8_first").value.toUpperCase() == "Л") {
-        alert("Попробуйте слова:\n\nЛИЛИЯ, ЛИНИЯ")
-    } else if (document.getElementById("m8_first").value.toUpperCase() == "М") {
-        alert("Попробуйте слово:\n\nМОЖНО")
-    } else if (document.getElementById("m8_first").value.toUpperCase() == "Н") {
-        alert("Попробуйте слова:\n\nНАЗАД, НРАВЫ")
-    } else if (document.getElementById("m8_first").value.toUpperCase() == "П") {
-        alert("Попробуйте слова:\n\nПЕСЕЦ, ПЕСНЯ, ПОРОХ, ПОРЫВ, ПОТОМ, ПРАВО, ПУСТО")
-    } else if (document.getElementById("m8_first").value.toUpperCase() == "Р") {
-        alert("Попробуйте слово:\n\nРУМБА")
-    } else if (document.getElementById("m8_first").value.toUpperCase() == "С") {
-        alert("Попробуйте слова:\n\nСКОРО, СУПЕР")
-    } else if (document.getElementById("m8_first").value.toUpperCase() == "Т") {
-        alert("Попробуйте слова:\n\nТРАВЫ, ТУМБА, ТУНЕЦ")
-    } else if (document.getElementById("m8_first").value.toUpperCase() == "Ф") {
-        alert("Попробуйте слово:\n\nФУГАС")
-    } else if (document.getElementById("m8_first").value.toUpperCase() == "Ш") {
-        alert("Попробуйте слово:\n\nШПРИЦ")
-    } else if (document.getElementById("m8_first").value.toUpperCase() == "Щ") {
-        alert("Попробуйте слова:\n\nЩИПОК, ЩИПЦЫ")
-    } else {
-        alert("На данную букву слов нет.")
+function CheckModule8(text) {
+    for (let i = 1; i < 36; i++) {
+        document.getElementById(`m8_word_${i}`).style.color = "black"
+    }
+    text = text.toUpperCase()
+    if (text[0] == "А") {
+        document.getElementById("m8_word_1").style.color = "white"
+    } else if (text[0] == "Б") {
+        document.getElementById("m8_word_2").style.color = "white"
+    } else if (text[0] == "В") {
+        if (text[1] == "В") {
+            document.getElementById("m8_word_3").style.color = "white"
+        } else if (text[1] == "З") {
+            document.getElementById("m8_word_4").style.color = "white"
+        } else if (text[1] == "Н") {
+            document.getElementById("m8_word_5").style.color = "white"
+        } else if (text[1] == "Ь") {
+            document.getElementById("m8_word_6").style.color = "white"
+        } else if (text[1] == "" || text[1] == null) {
+            document.getElementById("m8_word_3").style.color = "white"
+            document.getElementById("m8_word_4").style.color = "white"
+            document.getElementById("m8_word_5").style.color = "white"
+            document.getElementById("m8_word_6").style.color = "white"
+        }
+    } else if (text[0] == "Г") {
+        if (text[1] == "О") {
+            if (text[2] == "Р") {
+                document.getElementById("m8_word_7").style.color = "white"
+            } else if (text[2] == "Т") {
+                document.getElementById("m8_word_8").style.color = "white"
+            } else if (text[2] == "" || text[2] == null) {
+                document.getElementById("m8_word_7").style.color = "white"
+                document.getElementById("m8_word_8").style.color = "white"
+            }
+        } else if (text[1] == "У") {
+            document.getElementById("m8_word_9").style.color = "white"
+        } else if (text[1] == "" || text[1] == null) {
+            document.getElementById("m8_word_7").style.color = "white"
+            document.getElementById("m8_word_8").style.color = "white"
+            document.getElementById("m8_word_9").style.color = "white"
+        }
+    } else if (text[0] == "Д") {
+        if (text[3] == "А") {
+            document.getElementById("m8_word_10").style.color = "white"
+        } else if (text[3] == "Н") {
+            document.getElementById("m8_word_11").style.color = "white"
+        } else if (text[3] == "" || text[3] == null) {
+            document.getElementById("m8_word_10").style.color = "white"
+            document.getElementById("m8_word_11").style.color = "white"
+        }
+    } else if (text[0] == "К") {
+        if (text[1] == "Н") {
+            document.getElementById("m8_word_12").style.color = "white"
+        } else if (text[1] == "О") {
+            document.getElementById("m8_word_13").style.color = "white"
+        } else if (text[1] == "" || text[1] == null) {
+            document.getElementById("m8_word_12").style.color = "white"
+            document.getElementById("m8_word_13").style.color = "white"
+        }
+    } else if (text[0] == "Л") {
+        if (text[2] == "Л") {
+            document.getElementById("m8_word_14").style.color = "white"
+        } else if (text[2] == "Н") {
+            document.getElementById("m8_word_15").style.color = "white"
+        } else if (text[2] == "" || text[2] == null) {
+            document.getElementById("m8_word_14").style.color = "white"
+            document.getElementById("m8_word_15").style.color = "white"
+        }
+    } else if (text[0] == "М") {
+        document.getElementById("m8_word_16").style.color = "white"
+    } else if (text[0] == "Н") {
+        if (text[1] == "А") {
+            document.getElementById("m8_word_17").style.color = "white"
+        } else if (text[1] == "Р") {
+            document.getElementById("m8_word_18").style.color = "white"
+        } else if (text[1] == "" || text[1] == null) {
+            document.getElementById("m8_word_17").style.color = "white"
+            document.getElementById("m8_word_18").style.color = "white"
+        }
+    } else if (text[0] == "П") {
+        if (text[1] == "Е") {
+            if (text[3] == "Е") {
+                document.getElementById("m8_word_19").style.color = "white"
+            } else if (text[3] == "Н") {
+                document.getElementById("m8_word_20").style.color = "white"
+            } else if (text[3] == "" || text[3] == null) {
+                document.getElementById("m8_word_19").style.color = "white"
+                document.getElementById("m8_word_20").style.color = "white"
+            }
+        } else if (text[1] == "О") {
+            if (text[2] == "Р") {
+                if (text[3] == "О") {
+                    document.getElementById("m8_word_21").style.color = "white"
+                } else if (text[3] == "Ы") {
+                    document.getElementById("m8_word_22").style.color = "white"
+                } else if (text[3] == "" || text[3] == null) {
+                    document.getElementById("m8_word_21").style.color = "white"
+                    document.getElementById("m8_word_22").style.color = "white"
+                }
+            } else if (text[2] == "Т") {
+                document.getElementById("m8_word_23").style.color = "white"
+            } else if (text[2] == "" || text[2] == null) {
+                document.getElementById("m8_word_21").style.color = "white"
+                document.getElementById("m8_word_22").style.color = "white"
+                document.getElementById("m8_word_23").style.color = "white"
+            }
+        } else if (text[1] == "Р") {
+            document.getElementById("m8_word_24").style.color = "white"
+        } else if (text[1] == "У") {
+            document.getElementById("m8_word_25").style.color = "white"
+        } else if (text[1] == "" || text[1] == null) {
+            document.getElementById("m8_word_19").style.color = "white"
+            document.getElementById("m8_word_20").style.color = "white"
+            document.getElementById("m8_word_21").style.color = "white"
+            document.getElementById("m8_word_22").style.color = "white"
+            document.getElementById("m8_word_23").style.color = "white"
+            document.getElementById("m8_word_24").style.color = "white"
+            document.getElementById("m8_word_25").style.color = "white"
+        }
+    } else if (text[0] == "Р") {
+        document.getElementById("m8_word_26").style.color = "white"
+    } else if (text[0] == "С") {
+        if (text[1] == "К") {
+            document.getElementById("m8_word_27").style.color = "white"
+        } else if (text[1] == "У") {
+            document.getElementById("m8_word_28").style.color = "white"
+        } else if (text[1] == "" || text[1] == null) {
+            document.getElementById("m8_word_27").style.color = "white"
+            document.getElementById("m8_word_28").style.color = "white"
+        }
+    } else if (text[0] == "Т") {
+        if (text[1] == "Р") {
+            document.getElementById("m8_word_29").style.color = "white"
+        } else if (text[1] == "У") {
+            if (text[2] == "М") {
+                document.getElementById("m8_word_30").style.color = "white"
+            } else if (text[2] == "Н") {
+                document.getElementById("m8_word_31").style.color = "white"
+            } else if (text[2] == "" || text[2] == null) {
+                document.getElementById("m8_word_30").style.color = "white"
+                document.getElementById("m8_word_31").style.color = "white"
+            }
+        } else if (text[1] == "" || text[1] == null) {
+            document.getElementById("m8_word_29").style.color = "white"
+            document.getElementById("m8_word_30").style.color = "white"
+            document.getElementById("m8_word_31").style.color = "white"
+        }
+    } else if (text[0] == "Ф") {
+        document.getElementById("m8_word_32").style.color = "white"
+    } else if (text[0] == "Ш") {
+        document.getElementById("m8_word_33").style.color = "white"
+    } else if (text[0] == "Щ") {
+        if (text[3] == "О") {
+            document.getElementById("m8_word_34").style.color = "white"
+        } else if (text[3] == "Ц") {
+            document.getElementById("m8_word_35").style.color = "white"
+        } else if (text[3] == "" || text[3] == null) {
+            document.getElementById("m8_word_34").style.color = "white"
+            document.getElementById("m8_word_35").style.color = "white"
+        }
     }
 }
 
