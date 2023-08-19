@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/jquery-ui.css">
     <link rel="stylesheet" href="css/style.css">
     <title>Напарник для игры «Keep Talking and Nobody Explodes»</title>
 </head>
@@ -653,11 +654,15 @@
                     <h4 class="text-success">Модуль "Меня зовут Авас, а вас?":</h4>
                     <h5 class="text-danger">Внимание! Соблюдайте правописание пробелов, а также буквы 'Е' и 'Ё'.</h5>
                     <h6>Какое слово у вас сейчас написано?</h6>
-                    <input class="form-control" type="text" id="m6_text1" placeholder="Слово">
+                    <div class="ui-widget">
+                        <input class="form-control autocomplete" type="text" id="m6_text1" placeholder="Слово">
+                    </div>
                     <button class="btn btn-primary" onclick="CheckModule6Text1()">Принять</button>
                     <div class="mt-3" id="stage2">
                         <h6>Какое слово у вас на позиции: <span id="m6_position"></span>?</h6>
-                        <input class="form-control" type="text" id="m6_text2" placeholder="Слово">
+                        <div class="ui-widget">
+                            <input class="form-control autocomplete" type="text" id="m6_text2" placeholder="Слово">
+                        </div>
                         <button class="btn btn-primary" onclick="CheckModule6Text2()">Принять</button>
                     </div>
                 </div>
@@ -714,9 +719,114 @@
             <div class="row">
                 <div class="col-12">
                     <h4 class="text-success">Модуль "Пароль":</h4>
-                    <h6>Вводите первые буквы, пока не подберёте пароль.</h6>
-                    <input class="form-control" type="text" id="m8_first" maxlength="1" placeholder="Первая буква">
-                    <button class="btn btn-primary" onclick="CheckModule8()">Узнать слова</button>
+                    <h6>Вводите по-очереди буквы, пока не подберёте пароль.</h6>
+                    <input class="form-control" type="text" id="m8_letters" maxlength="5" placeholder="Буквы"
+                        oninput="CheckModule8(this.value)">
+                </div>
+                <div class="col-3 mt-2" id="m8_word_1">
+                    <h5>АЛЛЕЯ</h5>
+                </div>
+                <div class="col-3 mt-2" id="m8_word_2">
+                    <h5>БОМБА</h5>
+                </div>
+                <div class="col-3 mt-2" id="m8_word_3">
+                    <h5>ВВЕРХ</h5>
+                </div>
+                <div class="col-3 mt-2" id="m8_word_4">
+                    <h5>ВЗРЫВ</h5>
+                </div>
+                <div class="col-3 mt-2" id="m8_word_5">
+                    <h5>ВНИЗУ</h5>
+                </div>
+                <div class="col-3 mt-2" id="m8_word_6">
+                    <h5>ВЬЮГА</h5>
+                </div>
+                <div class="col-3 mt-2" id="m8_word_7">
+                    <h5>ГОРОХ</h5>
+                </div>
+                <div class="col-3 mt-2" id="m8_word_8">
+                    <h5>ГОТОВ</h5>
+                </div>
+                <div class="col-3 mt-2" id="m8_word_9">
+                    <h5>ГУСТО</h5>
+                </div>
+                <div class="col-3 mt-2" id="m8_word_10">
+                    <h5>ДАВАЙ</h5>
+                </div>
+                <div class="col-3 mt-2" id="m8_word_11">
+                    <h5>ДАВНО</h5>
+                </div>
+                <div class="col-3 mt-2" id="m8_word_12">
+                    <h5>КНИГА</h5>
+                </div>
+                <div class="col-3 mt-2" id="m8_word_13">
+                    <h5>КОНЕЦ</h5>
+                </div>
+                <div class="col-3 mt-2" id="m8_word_14">
+                    <h5>ЛИЛИЯ</h5>
+                </div>
+                <div class="col-3 mt-2" id="m8_word_15">
+                    <h5>ЛИНИЯ</h5>
+                </div>
+                <div class="col-3 mt-2" id="m8_word_16">
+                    <h5>МОЖНО</h5>
+                </div>
+                <div class="col-3 mt-2" id="m8_word_17">
+                    <h5>НАЗАД</h5>
+                </div>
+                <div class="col-3 mt-2" id="m8_word_18">
+                    <h5>НРАВЫ</h5>
+                </div>
+                <div class="col-3 mt-2" id="m8_word_19">
+                    <h5>ПЕСЕЦ</h5>
+                </div>
+                <div class="col-3 mt-2" id="m8_word_20">
+                    <h5>ПЕСНЯ</h5>
+                </div>
+                <div class="col-3 mt-2" id="m8_word_21">
+                    <h5>ПОРОХ</h5>
+                </div>
+                <div class="col-3 mt-2" id="m8_word_22">
+                    <h5>ПОРЫВ</h5>
+                </div>
+                <div class="col-3 mt-2" id="m8_word_23">
+                    <h5>ПОТОМ</h5>
+                </div>
+                <div class="col-3 mt-2" id="m8_word_24">
+                    <h5>ПРАВО</h5>
+                </div>
+                <div class="col-3 mt-2" id="m8_word_25">
+                    <h5>ПУСТО</h5>
+                </div>
+                <div class="col-3 mt-2" id="m8_word_26">
+                    <h5>РУМБА</h5>
+                </div>
+                <div class="col-3 mt-2" id="m8_word_27">
+                    <h5>СКОРО</h5>
+                </div>
+                <div class="col-3 mt-2" id="m8_word_28">
+                    <h5>СУПЕР</h5>
+                </div>
+                <div class="col-3 mt-2" id="m8_word_29">
+                    <h5>ТРАВЫ</h5>
+                </div>
+                <div class="col-3 mt-2" id="m8_word_30">
+                    <h5>ТУМБА</h5>
+                </div>
+                <div class="col-3 mt-2" id="m8_word_31">
+                    <h5>ТУНЕЦ</h5>
+                </div>
+                <div class="col-3 mt-2" id="m8_word_32">
+                    <h5>ФУГАС</h5>
+                </div>
+                <div class="col-3 mt-2" id="m8_word_33">
+                    <h5>ШПРИЦ</h5>
+                </div>
+                <div class="col-3 mt-2" id="m8_word_34">
+                    <h5>ЩИПОК</h5>
+                </div>
+                <div class="col-3 mt-2" id="m8_word_35">
+                    <h5>ЩИПЦЫ</h5>
                 </div>
             </div>
         </div>
@@ -913,7 +1023,81 @@
             </div>
         </div>
     </footer>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/jquery-ui.js"></script>
     <script src="js/main.js"></script>
+    <script>
+        $(function () {
+            let words_1 =
+                [
+                    "ДА",
+                    "ПЕРВОЕ",
+                    "ЭКРАН",
+                    "ГОТОВО",
+                    "ДРУГОЙ",
+                    "НИЧЕГО",
+                    "ПУСТО",
+                    "НЕТ",
+                    "ВЕСЕЛО",
+                    "ВЕСИЛА",
+                    "ВЕСИЛО",
+                    "КОРИТЬСЯ",
+                    "КОРИЦА",
+                    "КОРИТСЯ",
+                    "СТОЙ",
+                    "ГЛАЗ",
+                    "ГЛАС",
+                    "ПОРОГ",
+                    "ПОРОК",
+                    "ПАРОК",
+                    "КРАБ",
+                    "КРАП",
+                    "КРАББ",
+                    "ПАС",
+                    "ПАСС",
+                    "ПАЗ",
+                    "ПОГОДИ"
+                ]
+            let words_2 =
+                [
+                    "",
+                    "ГОТОВО",
+                    "ПЕРВОЕ",
+                    "НЕТ",
+                    "ПУСТО",
+                    "НИЧЕГО",
+                    "ДА",
+                    "ЕЩЁ РАЗ",
+                    "ЕЩЕ РАЗ",
+                    "ВЕСИЛО",
+                    "ВЕСЕЛО",
+                    "ВЕСИЛА",
+                    "ПОСТОЙ",
+                    "ПОГОДИ",
+                    "СТОЙ",
+                    "ВО ВСЕ",
+                    "ВОВСЕ",
+                    "ВСЕ",
+                    "ВСЁ",
+                    "И ТАК",
+                    "ИТАК",
+                    "ПАС",
+                    "ПАСС",
+                    "ПАЗ",
+                    "ЖМИ",
+                    "ДАЛЬШЕ",
+                    "ЧЁ?",
+                    "ЧЕ?",
+                    "ЧТО?"
+                ]
+            $("#m6_text1").autocomplete({
+                source: words_1
+            });
+            $("#m6_text2").autocomplete({
+                source: words_2
+            });
+        });
+    </script>
 </body>
 
 </html>
