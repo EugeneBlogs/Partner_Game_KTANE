@@ -216,98 +216,99 @@ function CheckModule1() {
         } else if (letters[i] == ".-.-") {
             letters_rus.push("Я")
         }
-        if (letters_rus[0] == "Б") {
-            if (letters_rus[1] == "О") {
-                alert("Введите: 3.595 МГц.")
-                return 0
-            } else if (letters_rus[1] == "Р") {
-                alert("Введите: 3.532 МГц.")
-                return 0
-            } else {
-                alert("Недостаточно данных или неверно заполненные данные.")
-                return 0
-            }
-        } else if (letters_rus[0] == "В") {
-            if (letters_rus[1] == "Е") {
-                alert("Введите: 3.522 МГц.")
-                return 0
-            } else if (letters_rus[1] == "И") {
-                if (letters_rus[2] == "Л") {
-                    alert("Введите: 3.555 МГц.")
-                    return 0
-                } else if (letters_rus[2] == "Т") {
-                    alert("Введите: 3.545 МГц.")
-                    return 0
-                } else {
-                    alert("Недостаточно данных или неверно заполненные данные.")
-                    return 0
-                }
-            } else if (letters_rus[1] == "О") {
-                alert("Введите: 3.552 МГц.")
-                return 0
-            } else {
-                alert("Недостаточно данных или неверно заполненные данные.")
-                return 0
-            }
-        } else if (letters_rus[0] == "К") {
-            if (letters_rus[1] == "Л") {
-                alert("Введите: 3.535 МГц.")
-                return 0
-            } else if (letters_rus[1] == "О") {
-                alert("Введите: 3.572 МГц.")
-                return 0
-            } else {
-                alert("Недостаточно данных или неверно заполненные данные.")
-                return 0
-            }
-        } else if (letters_rus[0] == "М") {
-            alert("Введите: 3.515 МГц.")
+    }
+    alert(`Вы ввели следующие символы: ${letters_rus}.\nВ следующем сообщении показаны возможные комбинации.`)
+    if (letters_rus[0] == "Б") {
+        if (letters_rus[1] == "О") {
+            alert("Окончальтельный ответ: 3.595 МГц.")
             return 0
-        } else if (letters_rus[0] == "П") {
-            if (letters_rus[1] == "О") {
-                if (letters_rus[2] == "К") {
-                    alert("Введите: 3.592 МГц.")
-                    return 0
-                } else if (letters_rus[2] == "М") {
-                    alert("Введите: 3.825 МГц.")
-                    return 0
-                } else if (letters_rus[2] == "П") {
-                    alert("Введите: 3.542 МГц.")
-                    return 0
-                } else if (letters_rus[2] == "Р") {
-                    if (letters_rus[3] == "О") {
-                        if (letters_rus[4] == "К") {
-                            alert("Введите: 3.565 МГц.")
-                            return 0
-                        } else if (letters_rus[4] == "Г") {
-                            alert("Введите: 3.600 МГц.")
-                            return 0
-                        } else {
-                            alert("Недостаточно данных или неверно заполненные данные.")
-                            return 0
-                        }
+        } else if (letters_rus[1] == "Р") {
+            alert("Окончальтельный ответ: 3.532 МГц.")
+            return 0
+        } else {
+            alert("Недостаточно данных.\nВозможные варианты: 3.532 МГц; 3.595 МГц.")
+            return 0
+        }
+    } else if (letters_rus[0] == "В") {
+        if (letters_rus[1] == "Е") {
+            alert("Окончальтельный ответ: 3.522 МГц.")
+            return 0
+        } else if (letters_rus[1] == "И") {
+            if (letters_rus[2] == "Л") {
+                alert("Окончальтельный ответ: 3.555 МГц.")
+                return 0
+            } else if (letters_rus[2] == "Т") {
+                alert("Окончальтельный ответ: 3.545 МГц.")
+                return 0
+            } else {
+                alert("Недостаточно данных.\nВозможные варианты: 3.545 МГц; 3.555 МГц")
+                return 0
+            }
+        } else if (letters_rus[1] == "О") {
+            alert("Окончальтельный ответ: 3.552 МГц.")
+            return 0
+        } else {
+            alert("Недостаточно данных.\nВозможные варианты: 3.522 МГц; 3.545 МГц; 3.552 МГц; 3.555 МГц")
+            return 0
+        }
+    } else if (letters_rus[0] == "К") {
+        if (letters_rus[1] == "Л") {
+            alert("Окончальтельный ответ: 3.535 МГц.")
+            return 0
+        } else if (letters_rus[1] == "О") {
+            alert("Окончальтельный ответ: 3.572 МГц.")
+            return 0
+        } else {
+            alert("Недостаточно данных.\nВозможные варианты: 3.535 МГц; 3.572 МГц.")
+            return 0
+        }
+    } else if (letters_rus[0] == "М") {
+        alert("Окончальтельный ответ: 3.515 МГц.")
+        return 0
+    } else if (letters_rus[0] == "П") {
+        if (letters_rus[1] == "О") {
+            if (letters_rus[2] == "К") {
+                alert("Окончальтельный ответ: 3.592 МГц.")
+                return 0
+            } else if (letters_rus[2] == "М") {
+                alert("Окончальтельный ответ: 3.825 МГц.")
+                return 0
+            } else if (letters_rus[2] == "П") {
+                alert("Окончальтельный ответ: 3.542 МГц.")
+                return 0
+            } else if (letters_rus[2] == "Р") {
+                if (letters_rus[3] == "О") {
+                    if (letters_rus[4] == "К") {
+                        alert("Окончальтельный ответ: 3.565 МГц.")
+                        return 0
+                    } else if (letters_rus[4] == "Г") {
+                        alert("Окончальтельный ответ: 3.600 МГц.")
+                        return 0
                     } else {
-                        alert("Недостаточно данных или неверно заполненные данные.")
+                        alert("Неверно заполненные данные.\nВозможные варианты: 3.565 МГц; 3.600 МГц.")
                         return 0
                     }
                 } else {
-                    alert("Недостаточно данных или неверно заполненные данные.")
+                    alert("Недостаточно данных.\nВозможные варианты: 3.565 МГц; 3.600 МГц.")
                     return 0
                 }
             } else {
-                alert("Недостаточно данных или неверно заполненные данные.")
+                alert("Недостаточно данных.\nВозможные варианты: 3.542 МГц; 3.565 МГц; 3.592 МГц; 3.600 МГц; 3.825 МГц.")
                 return 0
             }
-        } else if (letters_rus[0] == "Р") {
-            alert("Введите: 3.575 МГц.")
-            return 0
-        } else if (letters_rus[0] == "Т") {
-            alert("Введите: 3.505 МГц.")
-            return 0
         } else {
-            alert("Недостаточно данных или неверно заполненные данные.")
+            alert("Неверно заполненные данные.\nВозможные варианты: 3.542 МГц; 3.565 МГц; 3.592 МГц; 3.600 МГц; 3.825 МГц.")
             return 0
         }
+    } else if (letters_rus[0] == "Р") {
+        alert("Окончальтельный ответ: 3.575 МГц.")
+        return 0
+    } else if (letters_rus[0] == "Т") {
+        alert("Окончальтельный ответ: 3.505 МГц.")
+        return 0
+    } else {
+        alert("Неверно заполненные данные.")
+        return 0
     }
 }
 
@@ -621,23 +622,23 @@ function CheckModule5() {
     let p1y = Number(document.getElementById("m5_point1_y").value)
     let p2x = Number(document.getElementById("m5_point2_x").value)
     let p2y = Number(document.getElementById("m5_point2_y").value)
-    if (p1x == 1 && p1y == 2 && p2x == 6 && p2y == 3) {
+    if ((p1x == 1 && p1y == 2 && p2x == 6 && p2y == 3) || (p1x == 6 && p1y == 3 && p2x == 1 && p2y == 2)) {
         document.getElementById("maze_1").style.display = "block"
-    } else if (p1x == 2 && p1y == 4 && p2x == 5 && p2y == 2) {
+    } else if ((p1x == 2 && p1y == 4 && p2x == 5 && p2y == 2) || (p1x == 5 && p1y == 2 && p2x == 2 && p2y == 4)) {
         document.getElementById("maze_2").style.display = "block"
-    } else if (p1x == 4 && p1y == 4 && p2x == 6 && p2y == 4) {
+    } else if ((p1x == 4 && p1y == 4 && p2x == 6 && p2y == 4) || (p1x == 6 && p1y == 4 && p2x == 4 && p2y == 4)) {
         document.getElementById("maze_3").style.display = "block"
-    } else if (p1x == 1 && p1y == 1 && p2x == 1 && p2y == 4) {
+    } else if ((p1x == 1 && p1y == 1 && p2x == 1 && p2y == 4) || (p1x == 1 && p1y == 4 && p2x == 1 && p2y == 1)) {
         document.getElementById("maze_4").style.display = "block"
-    } else if (p1x == 4 && p1y == 6 && p2x == 5 && p2y == 3) {
+    } else if ((p1x == 4 && p1y == 6 && p2x == 5 && p2y == 3) || (p1x == 5 && p1y == 3 && p2x == 4 && p2y == 6)) {
         document.getElementById("maze_5").style.display = "block"
-    } else if (p1x == 3 && p1y == 5 && p2x == 5 && p2y == 1) {
+    } else if ((p1x == 3 && p1y == 5 && p2x == 5 && p2y == 1) || (p1x == 5 && p1y == 1 && p2x == 3 && p2y == 5)) {
         document.getElementById("maze_6").style.display = "block"
-    } else if (p1x == 2 && p1y == 1 && p2x == 2 && p2y == 6) {
+    } else if ((p1x == 2 && p1y == 1 && p2x == 2 && p2y == 6) || (p1x == 2 && p1y == 6 && p2x == 2 && p2y == 1)) {
         document.getElementById("maze_7").style.display = "block"
-    } else if (p1x == 3 && p1y == 4 && p2x == 4 && p2y == 1) {
+    } else if ((p1x == 3 && p1y == 4 && p2x == 4 && p2y == 1) || (p1x == 4 && p1y == 1 && p2x == 3 && p2y == 4)) {
         document.getElementById("maze_8").style.display = "block"
-    } else if (p1x == 1 && p1y == 5 && p2x == 3 && p2y == 2) {
+    } else if ((p1x == 1 && p1y == 5 && p2x == 3 && p2y == 2) || (p1x == 3 && p1y == 2 && p2x == 1 && p2y == 5)) {
         document.getElementById("maze_9").style.display = "block"
     } else {
         alert("Лабиринт с такими точками не найден.")
@@ -647,61 +648,61 @@ function CheckModule5() {
 function CheckModule6Text1() {
     let w1 = document.getElementById("m6_text1").value.toUpperCase()
     if (w1 == "ДА") {
-        document.getElementById("m6_position").innerHTML = "Столбец 1. Строка 2."
+        document.getElementById("m6_position").innerHTML = 'столбец <span class="text-danger">1</span>, строка <span class="text-danger">2</span>'
     } else if (w1 == "ПЕРВОЕ") {
-        document.getElementById("m6_position").innerHTML = "Столбец 2. Строка 1."
+        document.getElementById("m6_position").innerHTML = 'столбец <span class="text-danger">2</span>, строка <span class="text-danger">1</span>'
     } else if (w1 == "ЭКРАН") {
-        document.getElementById("m6_position").innerHTML = "Столбец 2. Строка 3."
+        document.getElementById("m6_position").innerHTML = 'столбец <span class="text-danger">2</span>, строка <span class="text-danger">3</span>'
     } else if (w1 == "ГОТОВО") {
-        document.getElementById("m6_position").innerHTML = "Столбец 2. Строка 1."
+        document.getElementById("m6_position").innerHTML = 'столбец <span class="text-danger">2</span>, строка <span class="text-danger">1</span>'
     } else if (w1 == "ДРУГОЙ") {
-        document.getElementById("m6_position").innerHTML = "Столбец 2. Строка 3."
+        document.getElementById("m6_position").innerHTML = 'столбец <span class="text-danger">2</span>, строка <span class="text-danger">3</span>'
     } else if (w1 == "НИЧЕГО") {
-        document.getElementById("m6_position").innerHTML = "Столбец 1. Строка 2."
+        document.getElementById("m6_position").innerHTML = 'столбец <span class="text-danger">1</span>, строка <span class="text-danger">2</span>'
     } else if (w1 == "") {
-        document.getElementById("m6_position").innerHTML = "Столбец 1. Строка 3."
+        document.getElementById("m6_position").innerHTML = 'столбец <span class="text-danger">1</span>, строка <span class="text-danger">3</span>'
     } else if (w1 == "ПУСТО") {
-        document.getElementById("m6_position").innerHTML = "Столбец 2. Строка 2."
+        document.getElementById("m6_position").innerHTML = 'столбец <span class="text-danger">2</span>, строка <span class="text-danger">2</span>'
     } else if (w1 == "НЕТ") {
-        document.getElementById("m6_position").innerHTML = "Столбец 2. Строка 3."
+        document.getElementById("m6_position").innerHTML = 'столбец <span class="text-danger">2</span>, строка <span class="text-danger">3</span>'
     } else if (w1 == "ВЕСЕЛО") {
-        document.getElementById("m6_position").innerHTML = "Столбец 1. Строка 2."
+        document.getElementById("m6_position").innerHTML = 'столбец <span class="text-danger">1</span>, строка <span class="text-danger">2</span>'
     } else if (w1 == "ВЕСИЛА") {
-        document.getElementById("m6_position").innerHTML = "Столбец 2. Строка 3."
+        document.getElementById("m6_position").innerHTML = 'столбец <span class="text-danger">2</span>, строка <span class="text-danger">3</span>'
     } else if (w1 == "ВЕСИЛО") {
-        document.getElementById("m6_position").innerHTML = "Столбец 2. Строка 2."
+        document.getElementById("m6_position").innerHTML = 'столбец <span class="text-danger">2</span>, строка <span class="text-danger">2</span>'
     } else if (w1 == "КОРИТЬСЯ") {
-        document.getElementById("m6_position").innerHTML = "Столбец 2. Строка 2."
+        document.getElementById("m6_position").innerHTML = 'столбец <span class="text-danger">2</span>, строка <span class="text-danger">2</span>'
     } else if (w1 == "КОРИЦА") {
-        document.getElementById("m6_position").innerHTML = "Столбец 1. Строка 3."
+        document.getElementById("m6_position").innerHTML = 'столбец <span class="text-danger">1</span>, строка <span class="text-danger">3</span>'
     } else if (w1 == "КОРИТСЯ") {
-        document.getElementById("m6_position").innerHTML = "Столбец 1. Строка 3."
+        document.getElementById("m6_position").innerHTML = 'столбец <span class="text-danger">1</span>, строка <span class="text-danger">3</span>'
     } else if (w1 == "СТОЙ") {
-        document.getElementById("m6_position").innerHTML = "Столбец 2. Строка 3."
+        document.getElementById("m6_position").innerHTML = 'столбец <span class="text-danger">2</span>, строка <span class="text-danger">3</span>'
     } else if (w1 == "ГЛАЗ") {
-        document.getElementById("m6_position").innerHTML = "Столбец 2. Строка 2."
+        document.getElementById("m6_position").innerHTML = 'столбец <span class="text-danger">2</span>, строка <span class="text-danger">2</span>'
     } else if (w1 == "ГЛАС") {
-        document.getElementById("m6_position").innerHTML = "Столбец 2. Строка 2."
+        document.getElementById("m6_position").innerHTML = 'столбец <span class="text-danger">2</span>, строка <span class="text-danger">2</span>'
     } else if (w1 == "ПОРОГ") {
-        document.getElementById("m6_position").innerHTML = "Столбец 2. Строка 2."
+        document.getElementById("m6_position").innerHTML = 'столбец <span class="text-danger">2</span>, строка <span class="text-danger">2</span>'
     } else if (w1 == "ПОРОК") {
-        document.getElementById("m6_position").innerHTML = "Столбец 2. Строка 2."
+        document.getElementById("m6_position").innerHTML = 'столбец <span class="text-danger">2</span>, строка <span class="text-danger">2</span>'
     } else if (w1 == "ПАРОК") {
-        document.getElementById("m6_position").innerHTML = "Столбец 1. Строка 1."
+        document.getElementById("m6_position").innerHTML = 'столбец <span class="text-danger">1</span>, строка <span class="text-danger">1</span>'
     } else if (w1 == "КРАБ") {
-        document.getElementById("m6_position").innerHTML = "Столбец 2. Строка 3."
+        document.getElementById("m6_position").innerHTML = 'столбец <span class="text-danger">2</span>, строка <span class="text-danger">3</span>'
     } else if (w1 == "КРАП") {
-        document.getElementById("m6_position").innerHTML = "Столбец 1. Строка 3."
+        document.getElementById("m6_position").innerHTML = 'столбец <span class="text-danger">1</span>, строка <span class="text-danger">3</span>'
     } else if (w1 == "КРАББ") {
-        document.getElementById("m6_position").innerHTML = "Столбец 2. Строка 2."
+        document.getElementById("m6_position").innerHTML = 'столбец <span class="text-danger">2</span>, строка <span class="text-danger">2</span>'
     } else if (w1 == "ПАС") {
-        document.getElementById("m6_position").innerHTML = "Столбец 1. Строка 2."
+        document.getElementById("m6_position").innerHTML = 'столбец <span class="text-danger">1</span>, строка <span class="text-danger">2</span>'
     } else if (w1 == "ПАСС") {
-        document.getElementById("m6_position").innerHTML = "Столбец 2. Строка 3."
+        document.getElementById("m6_position").innerHTML = 'столбец <span class="text-danger">2</span>, строка <span class="text-danger">3</span>'
     } else if (w1 == "ПАЗ") {
-        document.getElementById("m6_position").innerHTML = "Столбец 2. Строка 1."
+        document.getElementById("m6_position").innerHTML = 'столбец <span class="text-danger">2</span>, строка <span class="text-danger">1</span>'
     } else if (w1 == "ПОГОДИ") {
-        document.getElementById("m6_position").innerHTML = "Столбец 2. Строка 3."
+        document.getElementById("m6_position").innerHTML = 'столбец <span class="text-danger">2</span>, строка <span class="text-danger">3</span>'
     } else {
         alert("Данного слова нет в списке.")
     }
@@ -755,7 +756,7 @@ function CheckModule6Text2() {
     } else if (w2 == "ПАЗ") {
         alert("Нажмите на первую кнопку, которая появиться в данной списке:\n\nВО ВСЕ, ЧЁ?, ВСЁ, ВСЕ, ИТАК, ЖМИ, ПАСС, ЧТО?, ВОВСЕ, ПАС, И ТАК, ДАЛЬШЕ, ПАЗ, ЧЕ?")
     } else if (w2 == "ЖМИ") {
-        alert("Нажмите на первую кнопку, которая появиться в данной списке:\n\n:ЧЕ?, ПАС, ДАЛЬШЕ, ПАЗ, ВСЕ, И ТАК, ВСЁ, ЧЁ?, ЧТО?, ВО ВСЕ, ИТАК, ВОВСЕ, ПАСС, ЖМИ")
+        alert("Нажмите на первую кнопку, которая появиться в данной списке:\n\nЧЕ?, ПАС, ДАЛЬШЕ, ПАЗ, ВСЕ, И ТАК, ВСЁ, ЧЁ?, ЧТО?, ВО ВСЕ, ИТАК, ВОВСЕ, ПАСС, ЖМИ")
     } else if (w2 == "ДАЛЬШЕ") {
         alert("Нажмите на первую кнопку, которая появиться в данной списке:\n\nПАЗ, ПАС, ПАСС, ВСЕ, ЧЁ?, ЧЕ?, ДАЛЬШЕ, ЧТО?, ЖМИ, ВОВСЕ, И ТАК, ВСЁ, ИТАК, ВО ВСЕ")
     } else if (w2 == "ЧЁ?") {
@@ -763,7 +764,7 @@ function CheckModule6Text2() {
     } else if (w2 == "ЧЕ?") {
         alert("Нажмите на первую кнопку, которая появиться в данной списке:\n\nВОВСЕ, ЖМИ, ЧТО?, ВСЁ, ВО ВСЕ, ЧЁ?, ПАС, И ТАК, ЧЕ?, ИТАК, ПАЗ, ДАЛЬШЕ, ВСЕ, ПАСС")
     } else if (w2 == "ЧТО?") {
-        alert("Нажмите на первую кнопку, которая появиться в данной списке:\n\n ВСЁ, ДАЛЬШЕ, ИТАК, И ТАК, ЧЁ?, ЖМИ, ПАСС, ПАЗ, ПАС, ВО ВСЕ, ЧТО?, ЧЕ?, ВОВСЕ, ВСЕ")
+        alert("Нажмите на первую кнопку, которая появиться в данной списке:\n\nВСЁ, ДАЛЬШЕ, ИТАК, И ТАК, ЧЁ?, ЖМИ, ПАСС, ПАЗ, ПАС, ВО ВСЕ, ЧТО?, ЧЕ?, ВОВСЕ, ВСЕ")
     } else {
         alert("Данного слова нет в списке.")
     }
@@ -786,19 +787,19 @@ function CheckModule7() {
         if (document.getElementById("m7_value").value == 1) {
             alert("Нажмите на кнопку со значением - 4.")
         } else if (document.getElementById("m7_value").value == 2) {
-            alert("Нажмите на кнопку на той же позиции, что и на этапе 1.")
+            alert(`Нажмите на кнопку на той же позиции, что и на этапе 1.\nПо вашим данным: позиция ${document.getElementById("pos_stage_1").value}.`)
         } else if (document.getElementById("m7_value").value == 3) {
             alert("Нажмите на кнопку на позиции 1.")
         } else if (document.getElementById("m7_value").value == 4) {
-            alert("Нажмите на кнопку на той же позиции, что и на этапе 1.")
+            alert(`Нажмите на кнопку на той же позиции, что и на этапе 1.\nПо вашим данным: позиция ${document.getElementById("pos_stage_1").value}.`)
         } else {
             alert("Неверно заполненные данные.")
         }
     } else if (document.getElementById("m7_stage").value == 3) {
         if (document.getElementById("m7_value").value == 1) {
-            alert("Нажмите на кнопку с тем же значением, что и на этапе 2.")
+            alert(`Нажмите на кнопку с тем же значением, что и на этапе 2.\nПо вашим данным: значение ${document.getElementById("val_stage_2").value}.`)
         } else if (document.getElementById("m7_value").value == 2) {
-            alert("Нажмите на кнопку с тем же значением, что и на этапе 1.")
+            alert(`Нажмите на кнопку с тем же значением, что и на этапе 1.\nПо вашим данным: значение ${document.getElementById("val_stage_1").value}.`)
         } else if (document.getElementById("m7_value").value == 3) {
             alert("Нажмите на кнопку на позиции 3.")
         } else if (document.getElementById("m7_value").value == 4) {
@@ -808,25 +809,25 @@ function CheckModule7() {
         }
     } else if (document.getElementById("m7_stage").value == 4) {
         if (document.getElementById("m7_value").value == 1) {
-            alert("Нажмите на кнопку на той же позиции, что и на этапе 1.")
+            alert(`Нажмите на кнопку на той же позиции, что и на этапе 1.\nПо вашим данным: позиция ${document.getElementById("pos_stage_1").value}.`)
         } else if (document.getElementById("m7_value").value == 2) {
             alert("Нажмите на кнопку на позиции 1.")
         } else if (document.getElementById("m7_value").value == 3) {
-            alert("Нажмите на кнопку на той же позиции, что и на этапе 2.")
+            alert(`Нажмите на кнопку на той же позиции, что и на этапе 2.\nПо вашим данным: позиция ${document.getElementById("pos_stage_2").value}.`)
         } else if (document.getElementById("m7_value").value == 4) {
-            alert("Нажмите на кнопку на той же позиции, что и на этапе 2.")
+            alert(`Нажмите на кнопку на той же позиции, что и на этапе 2.\nПо вашим данным: позиция ${document.getElementById("pos_stage_2").value}.`)
         } else {
             alert("Неверно заполненные данные.")
         }
     } else if (document.getElementById("m7_stage").value == 5) {
         if (document.getElementById("m7_value").value == 1) {
-            alert("Нажмите на кнопку с тем же значением, что и на этапе 1.")
+            alert(`Нажмите на кнопку с тем же значением, что и на этапе 1.\nПо вашим данным: значение ${document.getElementById("val_stage_1").value}.`)
         } else if (document.getElementById("m7_value").value == 2) {
-            alert("Нажмите на кнопку с тем же значением, что и на этапе 2.")
+            alert(`Нажмите на кнопку с тем же значением, что и на этапе 2.\nПо вашим данным: значение ${document.getElementById("val_stage_2").value}.`)
         } else if (document.getElementById("m7_value").value == 3) {
-            alert("Нажмите на кнопку с тем же значением, что и на этапе 4.")
+            alert(`Нажмите на кнопку с тем же значением, что и на этапе 4.\nПо вашим данным: значение ${document.getElementById("val_stage_4").value}.`)
         } else if (document.getElementById("m7_value").value == 4) {
-            alert("Нажмите на кнопку с тем же значением, что и на этапе 3.")
+            alert(`Нажмите на кнопку с тем же значением, что и на этапе 3.\nПо вашим данным: значение ${document.getElementById("val_stage_3").value}.`)
         } else {
             alert("Неверно заполненные данные.")
         }
