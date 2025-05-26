@@ -624,8 +624,7 @@
             <div class="row">
                 <div class="col-12">
                     <h4 class="text-success">Модуль "Лабиринт":</h4>
-                    <h6>Введите координаты зелёных точек.<br>Порядок точек: сначала впишите точку, которая находится
-                        левее. Если они в одном столбце, вписывайте ту, которая выше.</h6>
+                    <h6>Введите координаты зелёных точек в любом порядке.</h6>
                     <p class="text-warning">Точка 1: </p>
                     <input class="form-control" id="m5_point1_x" type="number" min="1" max="6" placeholder="Столбец">
                     <input class="form-control" id="m5_point1_y" type="number" min="1" max="6" placeholder="Строка">
@@ -678,35 +677,51 @@
                     <input class="form-control" type="number" id="m7_stage" placeholder="Этап">
                     <input class="form-control" type="number" id="m7_value" placeholder="Значение на экране">
                     <button class="btn btn-primary" onclick="CheckModule7()">Узнать цифру</button>
-                    <h6 class="text-danger">Внимание! Не забывайте записывать значения в таблицу ниже, иначе забудете,
-                        куда нажимать!</h6>
+                    <h6 class="text-danger">Внимание! Не забывайте записывать значения в таблицу ниже, чтобы алгоритм
+                        корректно работал!</h6>
                     <table class="table table-bordered text-light">
                         <thead>
                             <tr>
+                                <th scope="col">Этап</th>
                                 <th scope="col">Позиция</th>
                                 <th scope="col">Значение</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td><input class="form-control" type="number" placeholder="Позиция этапа 1"></td>
-                                <td><input class="form-control" type="number" placeholder="Значение этапа 1"></td>
+                                <td>1</td>
+                                <td><input class="form-control" id="pos_stage_1" type="number"
+                                        placeholder="Позиция этапа 1"></td>
+                                <td><input class="form-control" id="val_stage_1" type="number"
+                                        placeholder="Значение этапа 1"></td>
                             </tr>
                             <tr>
-                                <td><input class="form-control" type="number" placeholder="Позиция этапа 2"></td>
-                                <td><input class="form-control" type="number" placeholder="Значение этапа 2"></td>
+                                <td>2</td>
+                                <td><input class="form-control" id="pos_stage_2" type="number"
+                                        placeholder="Позиция этапа 2"></td>
+                                <td><input class="form-control" id="val_stage_2" type="number"
+                                        placeholder="Значение этапа 2"></td>
                             </tr>
                             <tr>
-                                <td><input class="form-control" type="number" placeholder="Позиция этапа 3"></td>
-                                <td><input class="form-control" type="number" placeholder="Значение этапа 3"></td>
+                                <td>3</td>
+                                <td><input class="form-control" id="pos_stage_3" type="number"
+                                        placeholder="Позиция этапа 3"></td>
+                                <td><input class="form-control" id="val_stage_3" type="number"
+                                        placeholder="Значение этапа 3"></td>
                             </tr>
                             <tr>
-                                <td><input class="form-control" type="number" placeholder="Позиция этапа 4"></td>
-                                <td><input class="form-control" type="number" placeholder="Значение этапа 4"></td>
+                                <td>4</td>
+                                <td><input class="form-control" id="pos_stage_4" type="number"
+                                        placeholder="Позиция этапа 4"></td>
+                                <td><input class="form-control" id="val_stage_4" type="number"
+                                        placeholder="Значение этапа 4"></td>
                             </tr>
                             <tr>
-                                <td><input class="form-control" type="number" placeholder="Позиция этапа 5"></td>
-                                <td><input class="form-control" type="number" placeholder="Значение этапа 5"></td>
+                                <td>5</td>
+                                <td><input class="form-control" id="pos_stage_5" type="number"
+                                        placeholder="Позиция этапа 5"></td>
+                                <td><input class="form-control" id="val_stage_5" type="number"
+                                        placeholder="Значение этапа 5"></td>
                             </tr>
                         </tbody>
                     </table>
